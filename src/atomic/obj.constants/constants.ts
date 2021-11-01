@@ -3,7 +3,9 @@ export const fontSize = {
     medium: '18px',
 }
 export const API = {
-    BASE_URL: 'https://api.themoviedb.org/3/'
+    BASE_URL: 'https://api.themoviedb.org/3',
+    API_KEY: `&api_key=${process.env.REACT_APP_API_KEY}`,
+    PTBR: '&language=pt-BR',
 }
 
 export const lineHeight = {
@@ -21,3 +23,5 @@ export const colors = {
     red: "#E50914",
     black: "#141414"
 }
+
+export const padding = '4%';
