@@ -20,7 +20,7 @@ export const getTreding = async () => {
 }
 
 export const getTopRated = async () => {
-    return await axios.get(`${API.BASE_URL}/movie/top_rated${endRequest}`).then((res) => {
+    return await axios.get(`${API.BASE_URL}/movie/top_rated?&${endRequest}`).then((res) => {
         return res.data.results
     }).catch((err) => {
         console.log(err)
