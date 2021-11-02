@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { requests } from '../../data'
 import { Header } from '../../components/'
-import { MovieRow } from '../../components/'
+import { CategoryRow } from '../../components/'
 
 const HomePage = () => {
     const [movieList, setMovieList] = React.useState<[] | any>([])
@@ -19,8 +19,12 @@ const HomePage = () => {
     return (
         <div>
             <Header />
-            <MovieRow />
-            <h1>BANANINHA</h1>
+            {movieList?.map((item: any, index: React.Key) => {
+                console.log(item)
+                return (
+                    <CategoryRow key={index} title={item.title} item={item} />
+                )
+            })}
         </div>
     )
 }

@@ -1,9 +1,9 @@
 import styled from 'styled-components'
-import { padding } from '../../../atomic'
+import { spacing } from '../../../atomic'
 
 export const HeaderStyled = styled.header`
 display: flex;
-padding: ${padding};
+padding: ${spacing.padding};
 justify-content: space-between;
 align-items: center;
 position: fixed;

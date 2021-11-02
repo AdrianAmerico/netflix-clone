@@ -28,6 +28,7 @@ export const getTopRated = async () => {
 }
 
 export const getByCategory = async (category: number) => {
+    console.log(category)
     return await axios.get(`${API.BASE_URL}/discover/movie?width_genres=${category}${endRequest}`).then((res) => {
         return res.data.results
     }).catch((err) => {
@@ -36,15 +37,28 @@ export const getByCategory = async (category: number) => {
 }
 
 export const getActionCategory = async () => {
-    return await getByCategory(28)
+    console.log(`${API.BASE_URL}/discover/movie?width_genres=28${endRequest}`)
+    return await axios.get(`${API.BASE_URL}/discover/movie?width_genres=28${endRequest}`).then((res) => {
+        return res.data.results
+    }).catch((err) => {
+        console.log(err)
+    })
 }
 
 export const getComedyCategory = async () => {
-    return await getByCategory(35)
+    return await axios.get(`${API.BASE_URL}/discover/movie?width_genres=35${endRequest}`).then((res) => {
+        return res.data.results
+    }).catch((err) => {
+        console.log(err)
+    })
 }
 
 export const getHorrorCategory = async () => {
-    return await getByCategory(27)
+    return await axios.get(`${API.BASE_URL}/discover/movie?width_genres=27${endRequest}`).then((res) => {
+        return res.data.results
+    }).catch((err) => {
+        console.log(err)
+    })
 }
 
 export const getRomanceCategory = async () => {
