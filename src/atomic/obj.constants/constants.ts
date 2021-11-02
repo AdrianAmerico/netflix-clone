@@ -25,3 +25,5 @@ export const colors = {
 }
 
 export const padding = '4%';
+
+export const USER_PROFILE = 'https://occ-0-4442-3852.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABbme8JMz4rEKFJhtzpOKWFJ_6qX-0y5wwWyYvBhWS0VKFLa289dZ5zvRBggmFVWVPL2AAYE8xevD4jjLZjWumNo.png?r=a41';

@@ -1,11 +1,11 @@
 import * as React from 'react'
 import { requests } from '../../data'
-import { Header } from '../../components/mol.header'
-import { MovieRow } from '../../components/mol.movierow/'
+import { Header } from '../../components/'
+import { MovieRow } from '../../components/'
 
-const HomePage: React.FC = () => {
+const HomePage = () => {
     const [movieList, setMovieList] = React.useState<[] | any>([])
-    
+
     const getAllData = async () => {
         const result = await requests.getAll()
         setMovieList(result)
