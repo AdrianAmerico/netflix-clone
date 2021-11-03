@@ -12,7 +12,6 @@ background-size: cover;
 background-position: center;
 background-image: url(${API.BACKGROUND_IMAGE}/${(props) => props.image});
 `
-
 export const VerticalTransparency = styled.div`
 height: inherit;
 width: inherit;
@@ -55,7 +54,9 @@ color: #999;
 `
 
 export const AStyled = styled.a`
-display: inline-block;
+display: inline-flex;
+justify-content: space-between;
+align-items: center;
 font-size: 20px;
 font-weight: bold;
 padding: 12px 25px;

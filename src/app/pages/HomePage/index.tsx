@@ -6,6 +6,7 @@ import { CategoryRow, FeaturedMovie } from '../../components/'
 const HomePage = () => {
     const [movieList, setMovieList] = React.useState<[] | any>([])
     const [featureData, setFeatureData] = React.useState<null | any>(null)
+    const [isBlackHeader, setIsBlackHeader] = React.useState<boolean>(false)
 
     React.useEffect(() => {
         const getAllData = async () => {
@@ -20,9 +21,23 @@ const HomePage = () => {
         getAllData()
     }, [])
 
+    React.useEffect(() => {
+        const scrollListener = () => {
+            if(window.scrollY > 10){
+                setIsBlackHeader(true)
+            } else {
+                setIsBlackHeader(false)
+            }
+        }
+
+        window.addEventListener('scroll', scrollListener)
+        return () => {
+            window.removeEventListener('scroll', scrollListener)
+        }
+    }, [])
     return (
         <div>
-            <Header />
+            <Header isBlack={isBlackHeader} />
             {featureData &&
                 <FeaturedMovie movie={featureData} />
             }

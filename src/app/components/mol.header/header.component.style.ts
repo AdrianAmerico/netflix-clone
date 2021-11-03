@@ -1,7 +1,11 @@
 import styled from 'styled-components'
 import { spacing } from '../../../atomic'
 
-export const HeaderStyled = styled.header`
+interface Props {
+    isBlack: boolean
+}
+
+export const HeaderStyled = styled.header<Props>`
 display: flex;
 padding: ${spacing.padding};
 justify-content: space-between;
@@ -10,7 +14,8 @@ position: fixed;
 z-index: 999;
 inset: 0 0 auto 0;
 height: 70px;
-background: transparent;
+transition: ease all 0.5s;
+background: ${(props) => props.isBlack ? props.theme.colors.background_primary : 'transparent'};
 `
 
 export const NavStyled = styled.nav`

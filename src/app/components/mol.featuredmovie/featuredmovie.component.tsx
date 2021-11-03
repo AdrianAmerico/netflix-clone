@@ -1,5 +1,7 @@
 import * as React from 'react'
 import { HorizontalTransparency, SectionStyled, Title, VerticalTransparency, MovieInfo, DivStyled, Description, AStyled, AWatchStyled, AListStyled, DivGenderStyled } from '.';
+import { InfoIcon } from '../mol.infoicon';
+import { PlayIcon } from '../mol.playicon';
 
 interface Props {
     movie: any | null
@@ -30,9 +32,9 @@ export const FeaturedMovie = ({ movie }: Props) => {
                     <Description>
                         {movie.overview}
                     </Description>
-                    <div style={{ margin: "15px 0" }}>
-                        <AWatchStyled href={`/watch/${movie.id}`}>Assistir</AWatchStyled>
-                        <AListStyled href={`list/add/${movie.id}`}>Minha Lista</AListStyled>
+                    <div style={{ margin: "15px 0" }} >
+                        <AWatchStyled href={`/watch/${movie.id}`}><PlayIcon /> Assistir</AWatchStyled>
+                        <AListStyled href={`list/add/${movie.id}`}><InfoIcon /> Minha Lista</AListStyled>
                     </div>
                     <DivGenderStyled>
                         <strong>Gêneros: {genres.join(', ')}</strong>
