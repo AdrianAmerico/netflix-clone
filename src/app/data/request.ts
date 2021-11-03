@@ -28,6 +28,7 @@ export const getTopRated = async () => {
 }
 
 export const getByCategory = async (category: number) => {
+    console.log(category)
     return await axios.get(`${API.BASE_URL}/discover/movie?width_genres=${category}${endRequest}`).then((res) => {
         return res.data.results
     }).catch((err) => {
@@ -36,15 +37,28 @@ export const getByCategory = async (category: number) => {
 }
 
 export const getActionCategory = async () => {
-    return await getByCategory(28)
+    console.log(`${API.BASE_URL}/discover/movie?width_genres=28${endRequest}`)
+    return await axios.get(`${API.BASE_URL}/discover/movie?width_genres=28${endRequest}`).then((res) => {
+        return res.data.results
+    }).catch((err) => {
+        console.log(err)
+    })
 }
 
 export const getComedyCategory = async () => {
-    return await getByCategory(35)
+    return await axios.get(`${API.BASE_URL}/discover/movie?width_genres=35${endRequest}`).then((res) => {
+        return res.data.results
+    }).catch((err) => {
+        console.log(err)
+    })
 }
 
 export const getHorrorCategory = async () => {
-    return await getByCategory(27)
+    return await axios.get(`${API.BASE_URL}/discover/movie?width_genres=27${endRequest}`).then((res) => {
+        return res.data.results
+    }).catch((err) => {
+        console.log(err)
+    })
 }
 
 export const getRomanceCategory = async () => {
@@ -54,6 +68,32 @@ export const getRomanceCategory = async () => {
 export const getDocumentaryCategory = async () => {
     return await getByCategory(99)
 }
+
+export const getMovieInfo = async (movieId: string, type: string) => {
+    if (movieId) {
+        switch (type) {
+            case 'movie':
+                return await axios.get(`${API.BASE_URL}/movie/${movieId}${endRequest}`)
+                    .then((res) => {
+                        return res
+                    })
+                    .catch((err) => {
+                        console.log(err)
+                    })
+            case 'tv':
+                return await axios.get(`${API.BASE_URL}/tv/${movieId}?${endRequest}`)
+                    .then((res) => {
+                        return res.data
+                    })
+                    .catch((err) => {
+                        console.log(err)
+                    })
+            default:
+                throw new Error("invalid params")
+        }
+    }
+}
+
 
 export const getAll = async () => {
     return [

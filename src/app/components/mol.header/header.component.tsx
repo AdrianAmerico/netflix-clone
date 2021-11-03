@@ -3,9 +3,13 @@ import { Li, USER_PROFILE } from '../../../atomic';
 import { NetflixLogo } from '../mol.netflixlogo';
 import { DivLogoStyled, DivUserLogo, HeaderStyled, NavStyled, UlStyled } from './header.component.style';
 
-export const Header: React.FC = () => {
+interface Props {
+    isBlack: boolean
+}
+
+export const Header = ({ isBlack }: Props) => {
     return (
-        <HeaderStyled>
+        <HeaderStyled isBlack={isBlack}>
             <NavStyled>
                 <UlStyled>
                     <DivLogoStyled>
