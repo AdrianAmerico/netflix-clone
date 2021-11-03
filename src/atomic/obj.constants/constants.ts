@@ -6,7 +6,8 @@ export const API = {
     BASE_URL: 'https://api.themoviedb.org/3',
     API_KEY: `&api_key=${process.env.REACT_APP_API_KEY}`,
     PTBR: '&language=pt-BR',
-    IMG_URL: 'https://image.tmdb.org/t/p/w300'
+    IMG_URL: 'https://image.tmdb.org/t/p/w300',
+    BACKGROUND_IMAGE: 'https://image.tmdb.org/t/p/original'
 }
 
 export const lineHeight = {
@@ -22,7 +23,10 @@ export const colors = {
     background_secundary: "#fff",
     text: "#FFF",
     red: "#E50914",
-    black: "#141414"
+    black: "#141414",
+    black_secondary: "#000",
+    green: "#46d369",
+    gray: "#333"
 }
 
 export const USER_PROFILE = 'https://occ-0-4442-3852.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABbme8JMz4rEKFJhtzpOKWFJ_6qX-0y5wwWyYvBhWS0VKFLa289dZ5zvRBggmFVWVPL2AAYE8xevD4jjLZjWumNo.png?r=a41';

@@ -69,6 +69,32 @@ export const getDocumentaryCategory = async () => {
     return await getByCategory(99)
 }
 
+export const getMovieInfo = async (movieId: string, type: string) => {
+    if (movieId) {
+        switch (type) {
+            case 'movie':
+                return await axios.get(`${API.BASE_URL}/movie/${movieId}${endRequest}`)
+                    .then((res) => {
+                        return res
+                    })
+                    .catch((err) => {
+                        console.log(err)
+                    })
+            case 'tv':
+                return await axios.get(`${API.BASE_URL}/tv/${movieId}?${endRequest}`)
+                    .then((res) => {
+                        return res.data
+                    })
+                    .catch((err) => {
+                        console.log(err)
+                    })
+            default:
+                throw new Error("invalid params")
+        }
+    }
+}
+
+
 export const getAll = async () => {
     return [
         {
