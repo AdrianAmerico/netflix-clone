@@ -4,9 +4,9 @@ import { IMovie, IMovieInfo, IMovieList } from './request.component.type';
 
 const endRequest = `${API.PTBR}${API.API_KEY}`
 
-enum FeatureType {
-    'tv',
-    'movie'
+export enum FeatureType {
+    'tv' = 'tv',
+    'movie' = 'movie'
 }
 
 export const getNetflixOriginals = async (): Promise<IMovie[]> => {

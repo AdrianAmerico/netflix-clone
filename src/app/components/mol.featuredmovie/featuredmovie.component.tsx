@@ -1,14 +1,16 @@
 import * as React from 'react'
 import { HorizontalTransparency, SectionStyled, Title, VerticalTransparency, MovieInfo, DivStyled, Description, AStyled, AWatchStyled, AListStyled, DivGenderStyled } from '.';
+import { IMovie, IMovieInfo } from '../../data/request.component.type';
 import { InfoIcon } from '../mol.infoicon';
 import { PlayIcon } from '../mol.playicon';
 
 interface Props {
-    movie: IMovieInfo | null
+    movie: IMovieInfo
 }
 
 export const FeaturedMovie = ({ movie }: Props) => {
-    const fristDate = new Date(movie.first_air_date)
+    console.log(movie)
+    const firstDate = new Date(movie.first_air_date)
     const genres = []
 
     for (let i in movie.genres) {
@@ -26,7 +28,7 @@ export const FeaturedMovie = ({ movie }: Props) => {
                         <DivStyled color={"#46d369"}>
                             {movie.vote_average} pontos
                         </DivStyled>
-                        <DivStyled>{fristDate.getFullYear()}</DivStyled>
+                        <DivStyled>{firstDate.getFullYear()}</DivStyled>
                         <DivStyled>{movie.number_of_seasons} temporada{movie.number_of_seasons !== 1 && 's'}</DivStyled>
                     </MovieInfo>
                     <Description>
@@ -42,7 +44,6 @@ export const FeaturedMovie = ({ movie }: Props) => {
 
                 </HorizontalTransparency>
             </VerticalTransparency>
-
         </SectionStyled>
     )
 }
