@@ -4,7 +4,7 @@ import { InfoIcon } from '../mol.infoicon';
 import { PlayIcon } from '../mol.playicon';
 
 interface Props {
-    movie: any | null
+    movie: IMovieInfo | null
 }
 
 export const FeaturedMovie = ({ movie }: Props) => {

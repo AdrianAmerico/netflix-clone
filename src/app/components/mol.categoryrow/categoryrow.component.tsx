@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { API } from '../../../atomic'
+import { IMovie, IMovieList } from '../../data/request.component.type'
 import { Loading } from '../mol.loading'
 import { NavigateLeftIcon } from '../mol.navigatelefticon'
 import { NavigateRightIcon } from '../mol.navigaterighticon'
@@ -7,7 +8,7 @@ import { Card, StyledList, StyledListItem, CategoryContainer, DivNavigateIconSty
 
 interface Props {
     title: string;
-    item: any
+    item: IMovieList
 }
 
 export const CategoryRow = ({ title, item }: Props) => {
@@ -43,7 +44,7 @@ export const CategoryRow = ({ title, item }: Props) => {
 
             <Card size={item?.items?.length * 150}>
                 <StyledList margin={scrollX}>
-                    {item?.items?.map((data: any, index: number) => {
+                    {item?.items?.map((data: IMovie, index: number) => {
                         return (
                             <StyledListItem key={index}>
                                 <img src={`${API.IMG_URL}${data.poster_path}`} alt={data.original_title} />

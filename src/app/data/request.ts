@@ -1,9 +1,15 @@
 import axios from 'axios';
 import { API } from '../../atomic';
+import { IMovie, IMovieInfo, IMovieList } from './request.component.type';
 
 const endRequest = `${API.PTBR}${API.API_KEY}`
 
-export const getNetflixOriginals = async () => {
+enum FeatureType {
+    'tv',
+    'movie'
+}
+
+export const getNetflixOriginals = async (): Promise<IMovie[]> => {
     return await axios.get(`${API.BASE_URL}/discover/tv?dith_network=213${endRequest}`).then((res) => {
         return res.data.results
     }).catch((err) => {
@@ -11,7 +17,7 @@ export const getNetflixOriginals = async () => {
     })
 }
 
-export const getTreding = async () => {
+export const getTreding = async (): Promise<IMovie[]> => {
     return await axios.get(`${API.BASE_URL}/trending/all/week?${endRequest}`).then((res) => {
         return res.data.results
     }).catch((err) => {
@@ -19,7 +25,7 @@ export const getTreding = async () => {
     })
 }
 
-export const getTopRated = async () => {
+export const getTopRated = async (): Promise<IMovie[]> => {
     return await axios.get(`${API.BASE_URL}/movie/top_rated?&${endRequest}`).then((res) => {
         return res.data.results
     }).catch((err) => {
@@ -28,7 +34,6 @@ export const getTopRated = async () => {
 }
 
 export const getByCategory = async (category: number) => {
-    console.log(category)
     return await axios.get(`${API.BASE_URL}/discover/movie?width_genres=${category}${endRequest}`).then((res) => {
         return res.data.results
     }).catch((err) => {
@@ -36,8 +41,7 @@ export const getByCategory = async (category: number) => {
     })
 }
 
-export const getActionCategory = async () => {
-    console.log(`${API.BASE_URL}/discover/movie?width_genres=28${endRequest}`)
+export const getActionCategory = async (): Promise<IMovie[]> => {
     return await axios.get(`${API.BASE_URL}/discover/movie?width_genres=28${endRequest}`).then((res) => {
         return res.data.results
     }).catch((err) => {
@@ -45,7 +49,7 @@ export const getActionCategory = async () => {
     })
 }
 
-export const getComedyCategory = async () => {
+export const getComedyCategory = async (): Promise<IMovie[]> => {
     return await axios.get(`${API.BASE_URL}/discover/movie?width_genres=35${endRequest}`).then((res) => {
         return res.data.results
     }).catch((err) => {
@@ -53,7 +57,7 @@ export const getComedyCategory = async () => {
     })
 }
 
-export const getHorrorCategory = async () => {
+export const getHorrorCategory = async (): Promise<IMovie[]> => {
     return await axios.get(`${API.BASE_URL}/discover/movie?width_genres=27${endRequest}`).then((res) => {
         return res.data.results
     }).catch((err) => {
@@ -61,41 +65,26 @@ export const getHorrorCategory = async () => {
     })
 }
 
-export const getRomanceCategory = async () => {
+export const getRomanceCategory = async (): Promise<IMovie[]> => {
     return await getByCategory(10749)
 }
 
-export const getDocumentaryCategory = async () => {
+export const getDocumentaryCategory = async (): Promise<IMovie[]> => {
     return await getByCategory(99)
 }
 
-export const getMovieInfo = async (movieId: string, type: string) => {
-    if (movieId) {
-        switch (type) {
-            case 'movie':
-                return await axios.get(`${API.BASE_URL}/movie/${movieId}${endRequest}`)
-                    .then((res) => {
-                        return res
-                    })
-                    .catch((err) => {
-                        console.log(err)
-                    })
-            case 'tv':
-                return await axios.get(`${API.BASE_URL}/tv/${movieId}?${endRequest}`)
-                    .then((res) => {
-                        return res.data
-                    })
-                    .catch((err) => {
-                        console.log(err)
-                    })
-            default:
-                throw new Error("invalid params")
-        }
-    }
+export const getMovieInfo = async (movieId: string, type: FeatureType): Promise<IMovieInfo> => {
+    return await axios.get(`${API.BASE_URL}/${type}/${movieId}?${endRequest}`)
+        .then((res) => {
+            return res.data
+        })
+        .catch((err) => {
+            console.log(err)
+        })
 }
 
 
-export const getAll = async () => {
+export const getAll = async (): Promise<IMovieList[]> => {
     return [
         {
             slug: 'originals',
