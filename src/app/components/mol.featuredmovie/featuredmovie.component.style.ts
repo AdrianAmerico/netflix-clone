@@ -11,6 +11,10 @@ height: 100vh;
 background-size: cover;
 background-position: center;
 background-image: url(${API.BACKGROUND_IMAGE}/${(props) => props.image});
+
+@media(max-width: 768px){
+    height: 90vh;
+}
 `
 export const VerticalTransparency = styled.div`
 height: inherit;
@@ -32,12 +36,20 @@ background-image: linear-gradient(to right, ${(props) => props.theme.colors.back
 export const Title = styled.div`
 font-size: 60px;
 font-weight: bold;
+
+@media(max-width: 768px){
+    font-size: 48px;
+}
 `
 
 export const MovieInfo = styled.div`
 font-size: 18px;
 font-weight: bold;
 margin-top: 15px;
+
+@media(max-width: 768px){
+    font-size: 16px;
+}
 `
 
 export const DivStyled = styled.div<Props>`
@@ -51,6 +63,18 @@ max-width: 40%;
 margin-top: 15px;
 font-size: 20px;
 color: #999;
+overflow: hidden;
+text-overflow: ellipsis;
+display: -webkit-box;
+-webkit-line-clamp: 5; 
+-webkit-box-orient: vertical;
+
+@media(max-width: 768px){
+    font-size: 14px;
+    width: 100%;
+    margin-right: 30px;
+    max-width: max-content;
+}
 `
 
 export const AStyled = styled.a`
@@ -68,6 +92,14 @@ transition: all ease 0.2s;
 :hover {
 opacity: 0.7;
 }
+
+@media(max-width: 768px){
+    font-size: 16px;
+}
+@media(max-width: 450px){
+    font-size: 12px;
+    padding: 10px 20px;
+}
 `
 
 export const AWatchStyled = styled(AStyled)`
@@ -84,4 +116,8 @@ export const DivGenderStyled = styled.div`
 margin-top: 15px;
 font-size: 18px;
 color: #999;
+
+@media(max-width: 768px){
+    font-size: 14px;
+}
 `

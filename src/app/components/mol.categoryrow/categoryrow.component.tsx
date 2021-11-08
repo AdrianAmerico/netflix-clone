@@ -1,7 +1,6 @@
 import * as React from 'react'
 import { API } from '../../../atomic'
 import { IMovie, IMovieList } from '../../data/request.component.type'
-import { Loading } from '../mol.loading'
 import { NavigateLeftIcon } from '../mol.navigatelefticon'
 import { NavigateRightIcon } from '../mol.navigaterighticon'
 import { Card, StyledList, StyledListItem, CategoryContainer, DivNavigateIconStyled } from './categoryrow.component.style'

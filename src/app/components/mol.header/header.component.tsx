@@ -1,8 +1,7 @@
 import * as React from 'react';
 import { Li, USER_PROFILE } from '../../../atomic';
 import { NetflixLogo } from '../mol.netflixlogo';
-import { DivLogoStyled, DivUserLogo, HeaderStyled, NavStyled, UlStyled } from './header.component.style';
-
+import { DivLogoStyled, DivUserLogo, HeaderStyled, NavStyled, UlStyled, Divider,NavleftStyled } from './header.component.style';
 interface Props {
     isBlack: boolean
 }
@@ -10,7 +9,7 @@ interface Props {
 export const Header = ({ isBlack }: Props) => {
     return (
         <HeaderStyled isBlack={isBlack}>
-            <NavStyled>
+            <NavleftStyled>
                 <UlStyled>
                     <DivLogoStyled>
                         <a href="/">
@@ -19,13 +18,10 @@ export const Header = ({ isBlack }: Props) => {
                     </DivLogoStyled>
 
                     <Li>Inicio</Li>
-                    <Li>Séries</Li>
-                    <Li>Files</Li>
-                    <Li>Bombando</Li>
                     <Li>Minha lista</Li>
                 </UlStyled>
-            </NavStyled>
-
+            </NavleftStyled>
+           <Divider/>
             <NavStyled>
                 <UlStyled>
                     <DivUserLogo>
