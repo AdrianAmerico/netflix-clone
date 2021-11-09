@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { fontSize } from '../../../atomic'
 
 export const FooterStyled = styled.footer`
 max-width: 980px;
@@ -7,7 +8,6 @@ padding: 0 4%;
 color: grey;
 line-height: 1.2;
 user-select: none;
-/* height: 100px; */
 `
 
 export const DivStyled = styled.div`
@@ -24,13 +24,19 @@ justify-content: center;
 `
 
 export const UlStyled = styled.ul`
-font-size: 13px;
+font-size: ${fontSize.xxSmall};
 display: flex;
 flex-direction: row;
 flex-wrap: wrap;
 margin: 0 0 14px 0;
 align-items: flex-start;
 padding: 0;
+transition: ease all 0.5s;
+
+@media(min-width: 768px){
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+}
 `
 
 export const LiStyled = styled.li`
@@ -54,10 +60,11 @@ width: 100%;
 export const AStyled = styled.a`
 color: grey;
 text-decoration: none;
+padding: 12px 25px 12px 10px;
 cursor: pointer;
 `
 
 export const SpanStyled = styled.span`
 list-style-type: none;
-font-size: 12px;
+font-size: ${fontSize.xxSmall};
 `

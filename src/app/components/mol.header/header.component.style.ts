@@ -1,6 +1,5 @@
 import styled from 'styled-components'
-import { spacing } from '../../../atomic'
-import { NetflixLogo } from '../mol.netflixlogo'
+import { fontSize, spacing } from '../../../atomic'
 
 interface Props {
     isBlack: boolean
@@ -24,7 +23,7 @@ display: flex;
 justify-content: space-between;
 flex: 1;
 @media(max-width: 400px){
-    font-size: 12px;
+    font-size: ${fontSize.xxSmall};
 }
 `
 

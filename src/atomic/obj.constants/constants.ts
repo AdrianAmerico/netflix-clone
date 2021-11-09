@@ -1,7 +1,13 @@
 export const fontSize = {
-    small: '14px',
+    xxSmall: '12px',
+    xSmall: '14px',
+    small: '16px',
     medium: '18px',
+    large: '20px',
+    xLarge: '48px',
+    xxLarge: '60px',
 }
+
 export const API = {
     BASE_URL: 'https://api.themoviedb.org/3',
     API_KEY: `&api_key=${process.env.REACT_APP_API_KEY}`,
@@ -36,5 +42,4 @@ export const spacing = {
     small: '8px',
     medium: '12px',
     large: '20px'
-
 }

@@ -3,8 +3,7 @@ import { FacebookIcon } from '../mol.facebookicon';
 import { InstagramIcon } from '../mol.instagramicon';
 import { TwitterIcon } from '../mol.twittericon';
 import { YoutubeIcon } from '../mol.youtubeicon';
-import { DivContainerStyled, DivStyled, FooterStyled, LiStyled, SectionStyled, SpanStyled, UlStyled } from '.';
-import { AStyled } from '..';
+import { DivStyled, FooterStyled, LiStyled, SpanStyled, UlStyled, AStyled} from '.';
 
 export const Footer = () => {
     return (
