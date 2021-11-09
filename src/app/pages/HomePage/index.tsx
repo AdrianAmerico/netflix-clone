@@ -21,6 +21,7 @@ const HomePage = () => {
             const choosedInfo = await requests.getMovieInfo(choosedMovie.id, FeatureType.tv)
             setFeatureData(choosedInfo)
             setMovieList(result)
+            console.log(movieList)
         }
         getAllData()
     }, [])
