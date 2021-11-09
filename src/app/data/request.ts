@@ -33,14 +33,6 @@ export const getTopRated = async (): Promise<IMovie[]> => {
     })
 }
 
-export const getByCategory = async (category: number) => {
-    return await axios.get(`${API.BASE_URL}/discover/movie?width_genres=${category}${endRequest}`).then((res) => {
-        return res.data.results
-    }).catch((err) => {
-        console.log(err)
-    })
-}
-
 export const getActionCategory = async (): Promise<IMovie[]> => {
     return await axios.get(`${API.BASE_URL}/discover/movie?width_genres=28${endRequest}`).then((res) => {
         return res.data.results
@@ -50,7 +42,7 @@ export const getActionCategory = async (): Promise<IMovie[]> => {
 }
 
 export const getComedyCategory = async (): Promise<IMovie[]> => {
-    return await axios.get(`${API.BASE_URL}/discover/movie?width_genres=35${endRequest}`).then((res) => {
+    return await axios.get(`${API.BASE_URL}/discover/movie?width_genres=35${endRequest}&page=2`).then((res) => {
         return res.data.results
     }).catch((err) => {
         console.log(err)
@@ -58,7 +50,7 @@ export const getComedyCategory = async (): Promise<IMovie[]> => {
 }
 
 export const getHorrorCategory = async (): Promise<IMovie[]> => {
-    return await axios.get(`${API.BASE_URL}/discover/movie?width_genres=27${endRequest}`).then((res) => {
+    return await axios.get(`${API.BASE_URL}/discover/movie?width_genres=27${endRequest}&page=3`).then((res) => {
         return res.data.results
     }).catch((err) => {
         console.log(err)
@@ -66,11 +58,20 @@ export const getHorrorCategory = async (): Promise<IMovie[]> => {
 }
 
 export const getRomanceCategory = async (): Promise<IMovie[]> => {
-    return await getByCategory(10749)
+    return await axios.get(`${API.BASE_URL}/discover/movie?width_genres=10749${endRequest}&page=4`).then((res) => {
+        return res.data.results
+    }).catch((err) => {
+        console.log(err)
+    })
 }
 
 export const getDocumentaryCategory = async (): Promise<IMovie[]> => {
-    return await getByCategory(99)
+    console.log(`${API.BASE_URL}/discover/movie?width_genres=99${endRequest}`)
+    return await axios.get(`${API.BASE_URL}/discover/movie?width_genres=99${endRequest}&page=5`).then((res) => {
+        return res.data.results
+    }).catch((err) => {
+        console.log(err)
+    })
 }
 
 export const getMovieInfo = async (movieId: string, type: FeatureType): Promise<IMovieInfo> => {

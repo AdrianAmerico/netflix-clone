@@ -1,6 +1,5 @@
 import styled from 'styled-components'
-import { API, spacing } from '../../../atomic'
-
+import { API, spacing, fontSize } from '../../../atomic'
 interface Props {
     image?: string
     color?: string
@@ -11,6 +10,10 @@ height: 100vh;
 background-size: cover;
 background-position: center;
 background-image: url(${API.BACKGROUND_IMAGE}/${(props) => props.image});
+
+@media(max-width: 768px){
+    height: 90vh;
+}
 `
 export const VerticalTransparency = styled.div`
 height: inherit;
@@ -30,14 +33,22 @@ background-image: linear-gradient(to right, ${(props) => props.theme.colors.back
 `
 
 export const Title = styled.div`
-font-size: 60px;
+font-size: ${fontSize.xxLarge};
 font-weight: bold;
+
+@media(max-width: 768px){
+    font-size: ${fontSize.xLarge};
+}
 `
 
 export const MovieInfo = styled.div`
-font-size: 18px;
+font-size: ${fontSize.medium};
 font-weight: bold;
 margin-top: 15px;
+
+@media(max-width: 768px){
+    font-size: ${fontSize.small};
+}
 `
 
 export const DivStyled = styled.div<Props>`
@@ -49,15 +60,27 @@ color: ${(props) => props.color && props.color}
 export const Description = styled.div`
 max-width: 40%;
 margin-top: 15px;
-font-size: 20px;
-color: #999;
+font-size: ${fontSize.large};
+color: ${(props) => props.theme.colors.darkGray};
+overflow: hidden;
+text-overflow: ellipsis;
+display: -webkit-box;
+-webkit-line-clamp: 5; 
+-webkit-box-orient: vertical;
+
+@media(max-width: 768px){
+    font-size: ${fontSize.xSmall};
+    width: 100%;
+    margin-right: 30px;
+    max-width: max-content;
+}
 `
 
 export const AStyled = styled.a`
 display: inline-flex;
 justify-content: space-between;
 align-items: center;
-font-size: 20px;
+font-size: ${fontSize.large};
 font-weight: bold;
 padding: 12px 25px;
 border-radius: 5px;
@@ -67,6 +90,14 @@ opacity: 1;
 transition: all ease 0.2s;
 :hover {
 opacity: 0.7;
+}
+
+@media(max-width: 768px){
+    font-size: ${fontSize.small};
+}
+@media(max-width: 450px){
+    font-size: ${fontSize.xxSmall};
+    padding: 10px 20px;
 }
 `
 
@@ -82,6 +113,10 @@ color: ${(props) => props.theme.colors.background_secundary}
 
 export const DivGenderStyled = styled.div`
 margin-top: 15px;
-font-size: 18px;
-color: #999;
+font-size: ${fontSize.medium};
+color: ${(props) => props.theme.colors.darkGray};
+
+@media(max-width: 768px){
+    font-size: ${fontSize.xSmall};
+}
 `

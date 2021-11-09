@@ -9,7 +9,7 @@ interface Props {
 }
 
 export const FeaturedMovie = ({ movie }: Props) => {
-    console.log(movie)
+
     const firstDate = new Date(movie.first_air_date)
     const genres = []
 

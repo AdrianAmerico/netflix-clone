@@ -5,6 +5,7 @@ import { CategoryRow, FeaturedMovie } from '../../components/'
 import { Loading } from '../../components/mol.loading'
 import { IMovieInfo, IMovieList } from '../../data/request.component.type'
 import { FeatureType } from '../../data/request'
+import { Footer } from '../../components/mol.footer/footer.component'
 
 const HomePage = () => {
     const [movieList, setMovieList] = React.useState<IMovieList[] | []>([])
@@ -20,6 +21,7 @@ const HomePage = () => {
             const choosedInfo = await requests.getMovieInfo(choosedMovie.id, FeatureType.tv)
             setFeatureData(choosedInfo)
             setMovieList(result)
+            console.log(movieList)
         }
         getAllData()
     }, [])
@@ -53,6 +55,7 @@ const HomePage = () => {
                     )
                 })}
             </section>
+            <Footer />
         </div>
     )
 }
