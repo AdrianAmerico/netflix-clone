@@ -61,7 +61,7 @@ export const Description = styled.div`
 max-width: 40%;
 margin-top: 15px;
 font-size: ${fontSize.large};
-color: #999;
+color: ${(props) => props.theme.colors.darkGray};
 overflow: hidden;
 text-overflow: ellipsis;
 display: -webkit-box;
@@ -114,7 +114,7 @@ color: ${(props) => props.theme.colors.background_secundary}
 export const DivGenderStyled = styled.div`
 margin-top: 15px;
 font-size: ${fontSize.medium};
-color: #999;
+color: ${(props) => props.theme.colors.darkGray};
 
 @media(max-width: 768px){
     font-size: ${fontSize.xSmall};

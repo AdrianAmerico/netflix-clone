@@ -5,7 +5,7 @@ export const FooterStyled = styled.footer`
 max-width: 980px;
 margin: 20px auto 0;
 padding: 0 4%;
-color: grey;
+color: ${(props) => props.theme.colors.lightGray};
 line-height: 1.2;
 user-select: none;
 `
@@ -13,7 +13,7 @@ user-select: none;
 export const DivStyled = styled.div`
 display: flex;
 margin-bottom: 1rem;
-color: grey;
+color: ${(props) => props.theme.colors.lightGray};
 `
 
 export const SectionStyled = styled.section`
@@ -58,7 +58,7 @@ width: 100%;
 `
 
 export const AStyled = styled.a`
-color: grey;
+color: ${(props) => props.theme.colors.lightGray};
 text-decoration: none;
 padding: 12px 25px 12px 10px;
 cursor: pointer;
