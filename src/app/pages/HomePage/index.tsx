@@ -1,7 +1,6 @@
 import * as React from 'react'
-import { requests } from '../../data'
 import { CategoryRow, FeaturedMovie, Header, Loading, Footer } from '../../components'
-import { IMovieInfo, IMovieList } from '../../data'
+import { IMovieInfo, IMovieList, requests } from '../../data'
 import { FeatureType } from '../../data/request'
 
 const HomePage = () => {
