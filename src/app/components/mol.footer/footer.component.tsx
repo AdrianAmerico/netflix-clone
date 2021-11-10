@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { FacebookIcon, InstagramIcon, TwitterIcon, YoutubeIcon } from '..';
-import { DivStyled, FooterStyled, LiStyled, SpanStyled, UlStyled, AStyled} from '.';
+import { DivStyled, FooterStyled, LiStyled, SpanStyled, UlStyled, AStyled } from './footer.component.style';
 
 export const Footer = () => {
     return (

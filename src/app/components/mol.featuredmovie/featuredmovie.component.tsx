@@ -1,7 +1,7 @@
 import * as React from 'react'
-import { HorizontalTransparency, SectionStyled, Title, VerticalTransparency, MovieInfo, DivStyled, Description, AWatchStyled, AListStyled, DivGenderStyled } from '.';
-import { IMovieInfo } from '../../data';
 import { InfoIcon, PlayIcon } from '..';
+import { IMovieInfo } from '../../data';
+import { AListStyled, AWatchStyled, Description, DivGenderStyled, DivStyled, HorizontalTransparency, MovieInfo, SectionStyled, Title, VerticalTransparency } from './featuredmovie.component.style';
 
 interface Props {
     movie: IMovieInfo
