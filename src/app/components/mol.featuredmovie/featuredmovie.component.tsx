@@ -1,8 +1,7 @@
 import * as React from 'react'
-import { HorizontalTransparency, SectionStyled, Title, VerticalTransparency, MovieInfo, DivStyled, Description, AStyled, AWatchStyled, AListStyled, DivGenderStyled } from '.';
-import { IMovie, IMovieInfo } from '../../data/request.component.type';
-import { InfoIcon } from '../mol.infoicon';
-import { PlayIcon } from '../mol.playicon';
+import { HorizontalTransparency, SectionStyled, Title, VerticalTransparency, MovieInfo, DivStyled, Description, AWatchStyled, AListStyled, DivGenderStyled } from '.';
+import { IMovieInfo } from '../../data';
+import { InfoIcon, PlayIcon } from '..';
 
 interface Props {
     movie: IMovieInfo

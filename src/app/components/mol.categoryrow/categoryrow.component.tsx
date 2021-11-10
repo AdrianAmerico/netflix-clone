@@ -1,13 +1,12 @@
 import * as React from 'react'
 import { API } from '../../../atomic'
-import { IMovie, IMovieList } from '../../data/request.component.type'
-import { NavigateLeftIcon } from '../mol.navigatelefticon'
-import { NavigateRightIcon } from '../mol.navigaterighticon'
-import { Card, StyledList, StyledListItem, CategoryContainer, DivNavigateIconStyled } from './categoryrow.component.style'
+import { IMovie, IMovieList } from '../../data'
+import { NavigateLeftIcon, NavigateRightIcon } from '../'
+import { Card, StyledList, StyledListItem, CategoryContainer, DivNavigateIconStyled } from '.'
 
 interface Props {
     title: string;
-    item: IMovieList
+    item: IMovieList;
 }
 
 export const CategoryRow = ({ title, item }: Props) => {

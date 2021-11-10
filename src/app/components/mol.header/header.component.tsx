@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Li, USER_PROFILE } from '../../../atomic';
-import { NetflixLogo } from '../mol.netflixlogo';
-import { DivLogoStyled, DivUserLogo, HeaderStyled, NavStyled, UlStyled, Divider,NavleftStyled } from './header.component.style';
+import { NetflixLogo } from '..';
+import { DivLogoStyled, DivUserLogo, HeaderStyled, NavStyled, UlStyled, Divider,NavleftStyled } from '.';
 interface Props {
     isBlack: boolean
 }
