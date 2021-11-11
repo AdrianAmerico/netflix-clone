@@ -1,9 +1,6 @@
 import * as React from 'react';
-import { FacebookIcon } from '../mol.facebookicon';
-import { InstagramIcon } from '../mol.instagramicon';
-import { TwitterIcon } from '../mol.twittericon';
-import { YoutubeIcon } from '../mol.youtubeicon';
-import { DivStyled, FooterStyled, LiStyled, SpanStyled, UlStyled, AStyled} from '.';
+import { FacebookIcon, InstagramIcon, TwitterIcon, YoutubeIcon } from '..';
+import { DivStyled, FooterStyled, LiStyled, SpanStyled, UlStyled, AStyled } from './footer.component.style';
 
 export const Footer = () => {
     return (
@@ -93,9 +90,6 @@ export const Footer = () => {
                     </AStyled>
                 </LiStyled>
             </UlStyled>
-
-
-
         </FooterStyled>
     )
 }

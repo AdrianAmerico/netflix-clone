@@ -1,8 +1,8 @@
 import * as React from 'react'
-import { HorizontalTransparency, SectionStyled, Title, VerticalTransparency, MovieInfo, DivStyled, Description, AStyled, AWatchStyled, AListStyled, DivGenderStyled } from '.';
-import { IMovie, IMovieInfo } from '../../data/request.component.type';
-import { InfoIcon } from '../mol.infoicon';
-import { PlayIcon } from '../mol.playicon';
+import { InfoIcon, PlayIcon } from '..';
+import { FeaturedBackground } from '../../../stories';
+import { IMovieInfo } from '../../data';
+import { AListStyled, AWatchStyled, Description, DivGenderStyled, DivStyled, MovieInfo, Title } from './featuredmovie.component.style';
 
 interface Props {
     movie: IMovieInfo
@@ -18,9 +18,7 @@ export const FeaturedMovie = ({ movie }: Props) => {
     }
 
     return (
-        <SectionStyled image={movie.backdrop_path}>
-            <VerticalTransparency>
-                <HorizontalTransparency>
+        <FeaturedBackground image={movie.backdrop_path}>
                     <Title>
                         {movie.original_name}
                     </Title>
@@ -41,9 +39,6 @@ export const FeaturedMovie = ({ movie }: Props) => {
                     <DivGenderStyled>
                         <strong>Gêneros: {genres.join(', ')}</strong>
                     </DivGenderStyled>
-
-                </HorizontalTransparency>
-            </VerticalTransparency>
-        </SectionStyled>
+        </FeaturedBackground>
     )
 }

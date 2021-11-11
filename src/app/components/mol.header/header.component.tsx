@@ -1,14 +1,18 @@
 import * as React from 'react';
 import { Li, USER_PROFILE } from '../../../atomic';
-import { NetflixLogo } from '../mol.netflixlogo';
-import { DivLogoStyled, DivUserLogo, HeaderStyled, NavStyled, UlStyled, Divider,NavleftStyled } from './header.component.style';
+import { NetflixLogo } from '..';
+import { DivLogoStyled, DivUserLogo, NavStyled, UlStyled, Divider, NavleftStyled } from '.';
+import { HeaderCustom } from '../../../stories/Header'
+import { useHistory } from 'react-router-dom'
+import { routes } from '../../pages/routes';
 interface Props {
     isBlack: boolean
 }
 
 export const Header = ({ isBlack }: Props) => {
+    const history = useHistory()
     return (
-        <HeaderStyled isBlack={isBlack}>
+        <HeaderCustom isBlack={isBlack} size='medium' spacing='2% 4%'>
             <NavleftStyled>
                 <UlStyled>
                     <DivLogoStyled>
@@ -16,12 +20,10 @@ export const Header = ({ isBlack }: Props) => {
                             <NetflixLogo />
                         </a>
                     </DivLogoStyled>
-
-                    <Li>Inicio</Li>
-                    <Li>Minha lista</Li>
+                    <Li onClick={() => history.push(routes.listPage)}>Minha lista</Li>
                 </UlStyled>
             </NavleftStyled>
-           <Divider/>
+            <Divider />
             <NavStyled>
                 <UlStyled>
                     <DivUserLogo>
@@ -31,6 +33,6 @@ export const Header = ({ isBlack }: Props) => {
                     </DivUserLogo>
                 </UlStyled>
             </NavStyled>
-        </HeaderStyled>
+        </HeaderCustom>
     )
 }

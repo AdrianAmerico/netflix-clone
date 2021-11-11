@@ -1,11 +1,7 @@
 import * as React from 'react'
-import { requests } from '../../data'
-import { Header } from '../../components/'
-import { CategoryRow, FeaturedMovie } from '../../components/'
-import { Loading } from '../../components/mol.loading'
-import { IMovieInfo, IMovieList } from '../../data/request.component.type'
+import { CategoryRow, FeaturedMovie, Header, Loading, Footer } from '../../components'
+import { IMovieInfo, IMovieList, requests } from '../../data'
 import { FeatureType } from '../../data/request'
-import { Footer } from '../../components/mol.footer/footer.component'
 import { useBlackHeader } from '../../hooks/useBlackHeader'
 
 export const HomePage = () => {
@@ -22,7 +18,6 @@ export const HomePage = () => {
             const choosedInfo = await requests.getMovieInfo(choosedMovie.id, FeatureType.tv)
             setFeatureData(choosedInfo)
             setMovieList(result)
-            console.log(movieList)
         }
         getAllData()
     }, [])
