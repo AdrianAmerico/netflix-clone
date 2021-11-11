@@ -6,9 +6,9 @@ interface Props {
 */
     isBlack: boolean
     /**
-* You can change the header pading with nuemric or string avlues
+* You can change the header pading with string values 
 */
-    spacing?: number | string
+    spacing?: string
     /**
 * You can change the height of the header with this property
 */
@@ -30,7 +30,7 @@ const setSize = (size: string | void) => {
 
 export const HeaderStyled = styled.header<Props>`
 display: flex;
-padding: ${props => props.spacing ? props.spacing : 8}px;
+padding: ${props => props.spacing ? props.spacing : '8px'};
 justify-content: space-between;
 align-items: center;
 position: fixed;

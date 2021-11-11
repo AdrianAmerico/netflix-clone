@@ -1,8 +1,8 @@
 import * as React from 'react'
 import { API } from '../../../atomic'
 import { IMovie, IMovieList } from '../../data'
-import { NavigateLeftIcon, NavigateRightIcon } from '../'
 import { Card, StyledList, StyledListItem, CategoryContainer, DivNavigateIconStyled } from '.'
+import { NavigationIcon } from '../../../stories'
 
 interface Props {
     title: string;
@@ -32,13 +32,9 @@ export const CategoryRow = ({ title, item }: Props) => {
     return (
         <CategoryContainer>
             <h2>{title}</h2>
-            <DivNavigateIconStyled side="left" onClick={handleLeftArrow}>
-                <NavigateLeftIcon />
-            </DivNavigateIconStyled>
+            <NavigationIcon side='left' onClick={handleLeftArrow} />
 
-            <DivNavigateIconStyled side="right" onClick={handleRightArrow}>
-                <NavigateRightIcon />
-            </DivNavigateIconStyled>
+            <NavigationIcon side="right" onClick={handleRightArrow} />
 
             <Card size={item?.items?.length * 150}>
                 <StyledList margin={scrollX}>
