@@ -6,11 +6,12 @@ import { Loading } from '../../components/mol.loading'
 import { IMovieInfo, IMovieList } from '../../data/request.component.type'
 import { FeatureType } from '../../data/request'
 import { Footer } from '../../components/mol.footer/footer.component'
+import { useBlackHeader } from '../../hooks/useBlackHeader'
 
-const HomePage = () => {
+export const HomePage = () => {
     const [movieList, setMovieList] = React.useState<IMovieList[] | []>([])
     const [featureData, setFeatureData] = React.useState<IMovieInfo | null>(null)
-    const [isBlackHeader, setIsBlackHeader] = React.useState<boolean>(false)
+    const { isBlackHeader } = useBlackHeader()
 
     React.useEffect(() => {
         const getAllData = async (): Promise<void> => {
@@ -26,23 +27,8 @@ const HomePage = () => {
         getAllData()
     }, [])
 
-    React.useEffect(() => {
-        const scrollListener = () => {
-            if (window.scrollY > 10) {
-                setIsBlackHeader(true)
-            } else {
-                setIsBlackHeader(false)
-            }
-        }
-
-        window.addEventListener('scroll', scrollListener)
-        return () => {
-            window.removeEventListener('scroll', scrollListener)
-        }
-    }, [])
-
     return (
-        <div>
+        <React.Fragment>
             <Header isBlack={isBlackHeader} />
             {featureData ?
                 <FeaturedMovie movie={featureData} />
@@ -56,8 +42,6 @@ const HomePage = () => {
                 })}
             </section>
             <Footer />
-        </div>
+        </React.Fragment>
     )
 }
-
-export default HomePage
