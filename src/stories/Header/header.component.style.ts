@@ -1,9 +1,18 @@
 import styled from 'styled-components'
 
 interface Props {
+    /**
+* You can choose whether the header will remain dark or transparent with isBlack boolean
+*/
     isBlack: boolean
+    /**
+* You can change the header pading with nuemric or string avlues
+*/
     spacing?: number | string
-    size: string
+    /**
+* You can change the height of the header with this property
+*/
+    size?: 'small' | 'medium' | 'large'
 }
 
 const setSize = (size: string | void) => {
