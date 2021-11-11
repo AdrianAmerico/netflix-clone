@@ -1,5 +1,5 @@
 import React from 'react';
-import { SectionStyled, VerticalTransparency, HorizontalTransparency } from '.';
+import { SectionStyled, VerticalTransparency, HorizontalTransparency } from './featuredbackground.component.style';
 
 interface Props {
     /**
