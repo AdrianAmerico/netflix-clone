@@ -3,6 +3,7 @@ import { API } from '../../../atomic'
 import { IMovie, IMovieList } from '../../data'
 import { Card, StyledList, StyledListItem, CategoryContainer } from '.'
 import { NavigationIcon } from '../../../stories'
+import { AddIcon } from '..'
 
 interface Props {
     title: string;
@@ -46,6 +47,9 @@ export const CategoryRow = ({ title, item }: Props) => {
                         return (
                             <StyledListItem key={index} onClick={() => setToFavorite(data)}>
                                 <img src={`${API.IMG_URL}${data.poster_path}`} alt={data.original_title} />
+                                <div>
+                                <AddIcon />
+                                </div>
                             </StyledListItem>
                         )
                     })}

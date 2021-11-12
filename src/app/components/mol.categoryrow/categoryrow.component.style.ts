@@ -30,11 +30,13 @@ export const StyledList = styled.div<Props>`
 display: flex;
 transition: ease all 0.2s;
 margin-left: ${(props) => props.margin}px;
+position: relative;
 `
 
 export const StyledListItem = styled.div`
 display: flex;
 width: 150px;
+position: relative;
 
 img {
     width: 100%;
@@ -43,6 +45,26 @@ img {
     :hover{
         transform: scale(1);
         cursor: pointer;
+    }
+}
+
+div {
+    width: 100%;
+    z-index: 1;
+    position: absolute;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+    inset: auto 0 0 0;
+    :hover {
+        svg {
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            background-color: rgba(0,0,0,0.50);
+            cursor: pointer;
+        }
     }
 }
 `
