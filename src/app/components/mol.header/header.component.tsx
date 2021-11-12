@@ -13,23 +13,22 @@ export const Header = ({ isBlack }: Props) => {
     const history = useHistory()
     return (
         <HeaderCustom isBlack={isBlack} size='medium' spacing='2% 4%'>
+
             <NavleftStyled>
                 <UlStyled>
-                    <DivLogoStyled>
-                        <a href="/">
-                            <NetflixLogo />
-                        </a>
+                    <DivLogoStyled onClick={() => history.push(routes.base)}>
+                        <NetflixLogo />
                     </DivLogoStyled>
                     <Li onClick={() => history.push(routes.listPage)}>Minha lista</Li>
                 </UlStyled>
             </NavleftStyled>
+
             <Divider />
+
             <NavStyled>
                 <UlStyled>
                     <DivUserLogo>
-                        <a href="/">
-                            <img src={USER_PROFILE} alt="user" style={{ borderRadius: '3px' }} />
-                        </a>
+                        <img src={USER_PROFILE} alt="user" style={{ borderRadius: '3px' }} />
                     </DivUserLogo>
                 </UlStyled>
             </NavStyled>

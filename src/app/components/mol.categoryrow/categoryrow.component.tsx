@@ -29,6 +29,10 @@ export const CategoryRow = ({ title, item }: Props) => {
         setSctrollX(x)
     }
 
+    const setToFavorite = (data: IMovie) => {
+        console.log(data)
+    }
+
     return (
         <CategoryContainer>
             <h2>{title}</h2>
@@ -40,7 +44,7 @@ export const CategoryRow = ({ title, item }: Props) => {
                 <StyledList margin={scrollX}>
                     {item?.items?.map((data: IMovie, index: number) => {
                         return (
-                            <StyledListItem key={index}>
+                            <StyledListItem key={index} onClick={() => setToFavorite(data)}>
                                 <img src={`${API.IMG_URL}${data.poster_path}`} alt={data.original_title} />
                             </StyledListItem>
                         )

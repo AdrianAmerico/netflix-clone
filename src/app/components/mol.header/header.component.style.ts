@@ -8,7 +8,6 @@ interface Props {
 export const HeaderStyled = styled.header<Props>`
 display: flex;
 padding: ${spacing.padding};
-justify-content: space-between;
 align-items: center;
 position: fixed;
 z-index: 999;
@@ -22,12 +21,14 @@ export const NavStyled = styled.nav`
 display: flex;
 justify-content: space-between;
 flex: 1;
+
 @media(max-width: 400px){
     font-size: ${fontSize.xxSmall};
 }
 `
 
 export const NavleftStyled = styled(NavStyled)`
+
 @media(max-width: 768px){
     justify-content: space-around;
     flex: 2;
@@ -36,7 +37,6 @@ export const NavleftStyled = styled(NavStyled)`
 
 export const UlStyled = styled.ul`
 display: flex;
-justify-content: space-between;
 align-items: center;
 flex-direction: row;
 color: ${(props) => props.theme.colors.text};
@@ -45,7 +45,7 @@ flex: 1;
 `
 export const DivLogoStyled = styled.div`
 height: 25px;
-
+cursor: pointer;
 @media(max-width: 350px){
     height: 20px;
 }
