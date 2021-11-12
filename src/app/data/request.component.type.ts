@@ -34,3 +34,9 @@ export interface IMovieInfo {
     overview: string   
     genres: GenresArray[]
 }
+
+export interface ICardItem {
+    backdrop_path: string
+    original_title: string
+    poster_path: string
+}
