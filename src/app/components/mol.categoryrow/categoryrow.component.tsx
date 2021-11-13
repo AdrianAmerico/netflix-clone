@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { API } from '../../../atomic'
-import { ICardItem, IMovie, IMovieList } from '../../data'
+import { ICardItem, IMovieList } from '../../data'
 import { Card, StyledList, StyledListItem, CategoryContainer } from '.'
 import { NavigationIcon } from '../../../stories'
 import { AddIcon } from '..'
@@ -40,7 +40,7 @@ export const CategoryRow = ({ title, item, addFavorite }: Props) => {
 
             <Card size={item?.items?.length * 150}>
                 <StyledList margin={scrollX}>
-                    {item?.items?.map((data: any, index: number) => {
+                    {item?.items?.map((data, index: number) => {
                         const {
                             poster_path,
                             original_title

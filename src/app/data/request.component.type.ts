@@ -1,4 +1,5 @@
 export interface IMovie {
+    original_name: string;
     id: string
     name: string
     origin_country: string[]

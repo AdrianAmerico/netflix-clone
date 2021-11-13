@@ -1,12 +1,13 @@
 import React from 'react';
 import { API } from '../../../atomic';
 import { Footer, Header, StyledListItem } from '../../components';
+import { ICardItem } from '../../data';
 import { useBlackHeader } from '../../hooks/useBlackHeader';
-import { ListPageContainer, DivStyled } from './listpage.component.style';
+import { ListPageContainer, DivStyled, MainStyled } from './listpage.component.style';
 
 export const ListPage = () => {
     const { isBlackHeader } = useBlackHeader()
-    const [favoriteList, setFavoriteList] = React.useState<any[] | void>()
+    const [favoriteList, setFavoriteList] = React.useState<ICardItem[] | void>()
 
     React.useEffect(() => {
         const getFavoriteItems = () => {
@@ -21,10 +22,10 @@ export const ListPage = () => {
     return (
         <ListPageContainer>
             <Header isBlack={isBlackHeader} />
-            <DivStyled style={{ flex: 1, padding: '10% 4%' }}>
-                <div style={{ display: 'inline-flex', justifyContent: 'center', alignItems: "center", transition: 'all 0.2s ease', flexWrap: 'wrap' }}>
+            <MainStyled>
+                <DivStyled>
                     {favoriteList && favoriteList.length ?
-                        favoriteList?.map((data: any, index: number) => {
+                        favoriteList?.map((data: ICardItem, index: number) => {
                             console.log(data)
                             return (
                                 <StyledListItem key={index}>
@@ -32,8 +33,8 @@ export const ListPage = () => {
                                 </StyledListItem>
                             )
                         }) : <div>Sua lista está vazia</div>}
-                </div>
-            </DivStyled>
+                </DivStyled>
+            </MainStyled>
             <Footer />
         </ListPageContainer>
     )
