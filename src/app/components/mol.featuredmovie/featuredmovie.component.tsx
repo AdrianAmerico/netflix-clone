@@ -34,7 +34,7 @@ export const FeaturedMovie = ({ movie }: Props) => {
                 {movie.overview}
             </Description>
             <div style={{ margin: "15px 0" }} >
-                <AWatchStyled href={`/watch/${movie.id}`}><PlayIcon /> Assistir</AWatchStyled>
+                <AWatchStyled><PlayIcon /> Assistir</AWatchStyled>
                 <AListStyled onClick={() => addFavorite({ poster_path, original_name })}><InfoIcon /> Minha Lista</AListStyled>
             </div>
             <DivGenderStyled>
