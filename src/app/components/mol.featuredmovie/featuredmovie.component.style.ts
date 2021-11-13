@@ -63,6 +63,7 @@ opacity: 1;
 transition: all ease 0.2s;
 :hover {
 opacity: 0.7;
+cursor: pointer;
 }
 
 @media(max-width: 768px){

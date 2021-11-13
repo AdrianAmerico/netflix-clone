@@ -2,11 +2,14 @@ import * as React from 'react'
 import { CategoryRow, FeaturedMovie, Header, Loading, Footer } from '../../components'
 import { IMovieInfo, IMovieList, requests } from '../../data'
 import { FeatureType } from '../../data/request'
+import { useFavorite } from '../../hooks/useFavorite'
+import { useBlackHeader } from '../../hooks/useBlackHeader'
 
-const HomePage = () => {
+export const HomePage = () => {
     const [movieList, setMovieList] = React.useState<IMovieList[] | []>([])
     const [featureData, setFeatureData] = React.useState<IMovieInfo | null>(null)
-    const [isBlackHeader, setIsBlackHeader] = React.useState<boolean>(false)
+    const { isBlackHeader } = useBlackHeader()
+    const { addFavorite } = useFavorite()
 
     React.useEffect(() => {
         const getAllData = async (): Promise<void> => {
@@ -17,28 +20,12 @@ const HomePage = () => {
             const choosedInfo = await requests.getMovieInfo(choosedMovie.id, FeatureType.tv)
             setFeatureData(choosedInfo)
             setMovieList(result)
-            console.log(movieList)
         }
         getAllData()
     }, [])
 
-    React.useEffect(() => {
-        const scrollListener = () => {
-            if (window.scrollY > 10) {
-                setIsBlackHeader(true)
-            } else {
-                setIsBlackHeader(false)
-            }
-        }
-
-        window.addEventListener('scroll', scrollListener)
-        return () => {
-            window.removeEventListener('scroll', scrollListener)
-        }
-    }, [])
-
     return (
-        <div>
+        <React.Fragment>
             <Header isBlack={isBlackHeader} />
             {featureData ?
                 <FeaturedMovie movie={featureData} />
@@ -47,13 +34,11 @@ const HomePage = () => {
             <section style={{ marginTop: '-100px' }}>
                 {movieList?.map((item: IMovieList, index: React.Key) => {
                     return (
-                        <CategoryRow key={index} title={item.title} item={item} />
+                        <CategoryRow key={index} title={item.title} item={item} addFavorite={addFavorite} />
                     )
                 })}
             </section>
             <Footer />
-        </div>
+        </React.Fragment>
     )
 }
-
-export default HomePage

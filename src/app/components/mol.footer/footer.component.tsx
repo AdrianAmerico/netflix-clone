@@ -90,9 +90,6 @@ export const Footer = () => {
                     </AStyled>
                 </LiStyled>
             </UlStyled>
-
-
-
         </FooterStyled>
     )
 }

@@ -37,6 +37,10 @@ transition: ease all 0.5s;
 display: grid;
 grid-template-columns: repeat(3, 1fr);
 }
+
+@media(max-width: 600px){
+    justify-content: center;
+}
 `
 
 export const LiStyled = styled.li`
@@ -48,8 +52,12 @@ margin-bottom: 16px;
 :hover {
     text-decoration: underline;
 }
-
-
+@media(max-width: 600px){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
 `
 export const DivContainerStyled = styled.div`
 display: flex;
@@ -62,6 +70,10 @@ color: ${(props) => props.theme.colors.lightGray};
 text-decoration: none;
 padding: 12px 25px 12px 10px;
 cursor: pointer;
+
+@media(max-width: 600px){
+    padding: 5px 10px;
+}
 `
 
 export const SpanStyled = styled.span`

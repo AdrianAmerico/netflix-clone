@@ -1,4 +1,5 @@
 export interface IMovie {
+    original_name: string;
     id: string
     name: string
     origin_country: string[]
@@ -31,6 +32,12 @@ export interface IMovieInfo {
     first_air_date: string
     vote_average: number
     number_of_seasons: number
-    overview: string   
+    overview: string
     genres: GenresArray[]
+    poster_path: string
+}
+
+export interface ICardItem {
+    original_name: string
+    poster_path: string
 }

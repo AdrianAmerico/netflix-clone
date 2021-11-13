@@ -66,7 +66,6 @@ export const getRomanceCategory = async (): Promise<IMovie[]> => {
 }
 
 export const getDocumentaryCategory = async (): Promise<IMovie[]> => {
-    console.log(`${API.BASE_URL}/discover/movie?width_genres=99${endRequest}`)
     return await axios.get(`${API.BASE_URL}/discover/movie?width_genres=99${endRequest}&page=5`).then((res) => {
         return res.data.results
     }).catch((err) => {
