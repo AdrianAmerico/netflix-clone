@@ -21,8 +21,7 @@ transition: all ease 0.5s;
 ${(props) => props.side}: 0;
 
 @media(max-width: 768px){
-    opacity: 1;
-    width: 30px;
+  display: none;
 }
 
 svg {

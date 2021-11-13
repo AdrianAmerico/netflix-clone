@@ -10,7 +10,7 @@ interface Props {
 export const CategoryContainer = styled.div`
 user-select: none;
 margin-bottom: 30px;
-overflow: hidden;
+overflow-x: auto;
 h2 {
     margin: 0 0 0 ${spacing.padding};
 }
@@ -18,6 +18,9 @@ h2 {
     >div {
         opacity: 1;
     }
+}
+::-webkit-scrollbar { 
+    display: none; 
 }
 `
 

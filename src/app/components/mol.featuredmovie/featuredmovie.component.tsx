@@ -2,7 +2,7 @@ import * as React from 'react'
 import { InfoIcon, PlayIcon } from '..';
 import { FeaturedBackground } from '../../../stories';
 import { IMovieInfo } from '../../data';
-import { useAddFavorite } from '../../hooks/useAddFavorite';
+import { useFavorite } from '../../hooks/useFavorite';
 import { AListStyled, AWatchStyled, Description, DivGenderStyled, DivStyled, MovieInfo, Title } from './featuredmovie.component.style';
 
 interface Props {
@@ -10,7 +10,7 @@ interface Props {
 }
 
 export const FeaturedMovie = ({ movie }: Props) => {
-    const { addFavorite } = useAddFavorite()
+    const { addFavorite } = useFavorite()
     const firstDate = new Date(movie.first_air_date)
     const genres = []
 

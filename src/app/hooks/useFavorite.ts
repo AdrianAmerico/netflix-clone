@@ -1,7 +1,7 @@
 import React from 'react';
 import { ICardItem } from '../data';
 
-export const useAddFavorite = () => {
+export const useFavorite = () => {
     const [favoriteList, setFavoriteList] = React.useState<ICardItem[]>([])
 
     React.useEffect(() => {
@@ -33,5 +33,12 @@ export const useAddFavorite = () => {
             console.log("Este filme já está em seus favoritos")
         }
     }
-    return { addFavorite }
+
+    const removeFavorite = (data: ICardItem) => {
+        const updatedMovies = favoriteList.filter((item) => item.poster_path !== data.poster_path)
+        localStorage.setItem('favoriteList', JSON.stringify(updatedMovies))
+        setFavoriteList(updatedMovies)
+        console.log('removido')
+    }
+    return { addFavorite, removeFavorite }
 }

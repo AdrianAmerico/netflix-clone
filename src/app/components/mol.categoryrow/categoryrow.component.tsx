@@ -54,9 +54,9 @@ export const CategoryRow = ({ title, item, addFavorite }: Props) => {
                                     })}
                             >
                                 <img src={`${API.IMG_URL}${poster_path}`} alt={data.original_title} />
-                                <div>
+                                {/* <div>
                                     <AddIcon />
-                                </div>
+                                </div> */}
                             </StyledListItem>
                         )
                     })}

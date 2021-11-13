@@ -2,14 +2,14 @@ import * as React from 'react'
 import { CategoryRow, FeaturedMovie, Header, Loading, Footer } from '../../components'
 import { IMovieInfo, IMovieList, requests } from '../../data'
 import { FeatureType } from '../../data/request'
-import { useAddFavorite } from '../../hooks/useAddFavorite'
+import { useFavorite } from '../../hooks/useFavorite'
 import { useBlackHeader } from '../../hooks/useBlackHeader'
 
 export const HomePage = () => {
     const [movieList, setMovieList] = React.useState<IMovieList[] | []>([])
     const [featureData, setFeatureData] = React.useState<IMovieInfo | null>(null)
     const { isBlackHeader } = useBlackHeader()
-    const { addFavorite } = useAddFavorite()
+    const { addFavorite } = useFavorite()
 
     React.useEffect(() => {
         const getAllData = async (): Promise<void> => {
