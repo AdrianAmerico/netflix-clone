@@ -31,12 +31,12 @@ export interface IMovieInfo {
     first_air_date: string
     vote_average: number
     number_of_seasons: number
-    overview: string   
+    overview: string
     genres: GenresArray[]
+    poster_path: string
 }
 
 export interface ICardItem {
-    backdrop_path: string
-    original_title: string
+    original_name: string
     poster_path: string
 }

@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { API } from '../../../atomic'
-import { IMovie, IMovieList } from '../../data'
+import { ICardItem, IMovie, IMovieList } from '../../data'
 import { Card, StyledList, StyledListItem, CategoryContainer } from '.'
 import { NavigationIcon } from '../../../stories'
 import { AddIcon } from '..'
@@ -8,9 +8,10 @@ import { AddIcon } from '..'
 interface Props {
     title: string;
     item: IMovieList;
+    addFavorite: (data: ICardItem) => void
 }
 
-export const CategoryRow = ({ title, item }: Props) => {
+export const CategoryRow = ({ title, item, addFavorite }: Props) => {
     const [scrollX, setSctrollX] = React.useState<number>(0)
 
     const handleLeftArrow = () => {
@@ -30,10 +31,6 @@ export const CategoryRow = ({ title, item }: Props) => {
         setSctrollX(x)
     }
 
-    const setToFavorite = (data: IMovie) => {
-        console.log(data)
-    }
-
     return (
         <CategoryContainer>
             <h2>{title}</h2>
@@ -43,18 +40,28 @@ export const CategoryRow = ({ title, item }: Props) => {
 
             <Card size={item?.items?.length * 150}>
                 <StyledList margin={scrollX}>
-                    {item?.items?.map((data: IMovie, index: number) => {
+                    {item?.items?.map((data: any, index: number) => {
+                        const {
+                            poster_path,
+                            original_title
+                        } = data
                         return (
-                            <StyledListItem key={index} onClick={() => setToFavorite(data)}>
-                                <img src={`${API.IMG_URL}${data.poster_path}`} alt={data.original_title} />
+                            <StyledListItem key={index}
+                                onClick={() =>
+                                    addFavorite({
+                                        poster_path,
+                                        original_name: original_title ? original_title : data.original_name
+                                    })}
+                            >
+                                <img src={`${API.IMG_URL}${poster_path}`} alt={data.original_title} />
                                 <div>
-                                <AddIcon />
+                                    <AddIcon />
                                 </div>
                             </StyledListItem>
                         )
                     })}
                 </StyledList>
             </Card>
-        </CategoryContainer>
+        </CategoryContainer >
     )
 }

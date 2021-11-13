@@ -1,7 +1,8 @@
 import * as React from 'react'
 import { InfoIcon, PlayIcon } from '..';
 import { FeaturedBackground } from '../../../stories';
-import { ICardItem, IMovieInfo } from '../../data';
+import { IMovieInfo } from '../../data';
+import { useAddFavorite } from '../../hooks/useAddFavorite';
 import { AListStyled, AWatchStyled, Description, DivGenderStyled, DivStyled, MovieInfo, Title } from './featuredmovie.component.style';
 
 interface Props {
@@ -9,26 +10,14 @@ interface Props {
 }
 
 export const FeaturedMovie = ({ movie }: Props) => {
-
+    const { addFavorite } = useAddFavorite()
     const firstDate = new Date(movie.first_air_date)
     const genres = []
 
     for (let i in movie.genres) {
         genres.push(movie.genres[i].name)
     }
-
-    const addFavorite = (data: any) => {
-        const { backdrop_path,
-            original_title,
-            poster_path } = data
-
-        const testeJson = JSON.stringify({
-            backdrop_path,
-            original_title,
-            poster_path
-        })
-    }
-
+    const { poster_path, original_name } = movie
     return (
         <FeaturedBackground image={movie.backdrop_path}>
             <Title>
@@ -46,7 +35,7 @@ export const FeaturedMovie = ({ movie }: Props) => {
             </Description>
             <div style={{ margin: "15px 0" }} >
                 <AWatchStyled href={`/watch/${movie.id}`}><PlayIcon /> Assistir</AWatchStyled>
-                <AListStyled onClick={() => addFavorite(movie)}><InfoIcon /> Minha Lista</AListStyled>
+                <AListStyled onClick={() => addFavorite({ poster_path, original_name })}><InfoIcon /> Minha Lista</AListStyled>
             </div>
             <DivGenderStyled>
                 <strong>Gêneros: {genres.join(', ')}</strong>
