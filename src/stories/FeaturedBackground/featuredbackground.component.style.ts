@@ -10,6 +10,7 @@ height: 100vh;
 background-size: cover;
 background-position: center;
 background-image: url(${API.BACKGROUND_IMAGE}/${(props) => props.image});
+background-repeat: no-repeat;
 
 @media(max-width: 768px){
     height: 90vh;
