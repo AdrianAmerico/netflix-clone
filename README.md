@@ -1,6 +1,6 @@
 # Desafio Provi
 
-# Surge: 
+# Link: 
 
 ## Considerações iniciais
 
@@ -8,11 +8,25 @@ De longe foi o projeto onde mais me exigiu conhecimento técnicos, graças a ele
 
 ### Instruções para o projeto
 
-lorem ipsum bananinha dolor....
+Utilize este comando em sua pasta de projetos: 
+
+##### git clone https://github.com/AdrianAmerico/netflix-clone.git
+
+##### cd netflix-clone
+
+##### npm install
+
+Após isso, dentro da pasta netflix-clone crie um arquivo com o nome de **.env** e dentro dele escreva o seguinte parametro
+
+REACT_APP_API_KEY= ***sua key da api aqui***
+
+caso não tenha essa key, acesse o link da documentação abaixo, siga o passo a passo e ao fim este problema estará resolvido :p
+
+https://developers.themoviedb.org/3/getting-started/introduction
 
 ### Desafios
 
-- [x]  deve usar CRA ou qualquer outro boilerplate
+- [x]  deve usar [CRA] ou qualquer outro boilerplate
 - [x]  deve mostrar dados recuperados de um servidor, API pública ou um JSON simulado usando uma biblioteca http
 - [x] deve ser responsivo
 - [x]  deve se concentrar em componentes e capacidade de reutilização de código
@@ -72,7 +86,6 @@ lorem ipsum bananinha dolor....
   - Minha lista iria passar a buscar dados do usuário pela nova API.
   - Iria existir um botão de pesquisa, onde ao digitar irá exibir séries e filmes correspondentes.
   - O botão Assistir iria exibir um modal ocupando toda a tela e uma opção de reproduzir o trailer do filme destacado.
-
 ## Imagens
 
 **Homepage**
