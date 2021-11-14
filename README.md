@@ -6,6 +6,10 @@
 
 * 
 
+### Instruções para o projeto
+
+lorem ipsum bananinha dolor....
+
 ### Desafios
 
 - [x]  deve usar [CRA] ou qualquer outro boilerplate
@@ -18,10 +22,10 @@
 
 - [ ] desenhe usando figma, esboce nossa outra ferramenta de design (não foi necessário)
 
-- [ ] Suportar autenticação usando [JWT] e ter um sistema de login / rotas autenticadas
-- [x] criar um [storybook] com seus componentes
-- [ ] testes usando [jest]
-- [x] deploy, boas opções podem ser [Firebase], [AWS] ou [Netlify] (utilizado surge)
+- [ ] Suportar autenticação usando JWT e ter um sistema de login / rotas autenticadas
+- [x] criar um storybook com seus componentes
+- [ ] testes usando jest
+- [x] deploy, boas opções podem ser Firebase, AWS ou Netlify (utilizado surge)
 
 ## O que Funciona
 
