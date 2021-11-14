@@ -12,7 +12,7 @@ lorem ipsum bananinha dolor....
 
 ### Desafios
 
-- [x]  deve usar [CRA] ou qualquer outro boilerplate
+- [x]  deve usar CRA ou qualquer outro boilerplate
 - [x]  deve mostrar dados recuperados de um servidor, API pública ou um JSON simulado usando uma biblioteca http
 - [x] deve ser responsivo
 - [x]  deve se concentrar em componentes e capacidade de reutilização de código
