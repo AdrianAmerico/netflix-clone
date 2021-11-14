@@ -77,20 +77,20 @@ lorem ipsum bananinha dolor....
 
 **Homepage**
 
-![homepage](/home/sanzukun/Vídeos/homepage.gif)
+![homepage](https://user-images.githubusercontent.com/73081422/141693713-668ba5ce-15c9-4605-904f-9fe4ba6ea7d6.gif)
 
 **Snackbar**
 
-![snackbar](/home/sanzukun/Vídeos/snackbar.gif)
+![snackbar](https://user-images.githubusercontent.com/73081422/141693607-76f2eb74-9889-4311-af41-6df81fd4222d.gif)
 
 **Scrollbar**
 
-![scrollbar](/home/sanzukun/Vídeos/scrollbar.gif)
+![scrollbar](https://user-images.githubusercontent.com/73081422/141693610-04dff223-eeb1-4e82-a9a1-c44d4cc8b785.gif)
 
 **Minha lista**
 
-![mylist](/home/sanzukun/Vídeos/mylist.gif)
+![mylist](https://user-images.githubusercontent.com/73081422/141693625-1982556a-8e7b-445d-ad93-41971df7384d.gif)
 
 **Versão mobile**
 
-![mobile](/home/sanzukun/Vídeos/mobile.gif)
+![mobile](https://user-images.githubusercontent.com/73081422/141693635-25ebd3c6-878e-449d-a7b9-29f769db0d59.gif)
