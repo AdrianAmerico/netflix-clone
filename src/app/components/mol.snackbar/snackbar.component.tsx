@@ -1,13 +1,11 @@
 /* eslint-disable react/display-name */
-import React, { useState, forwardRef, useImperativeHandle } from "react";
+import React, { useState, forwardRef, useImperativeHandle, useContext } from "react";
+import { GlobalContext } from "../../context";
 import { Snack } from "./snackbar.component.style";
-interface Props {
-    ref: React.MutableRefObject<any>;
-    message: string
-    type: "success" | "fail"
-}
-export const SnackBar = forwardRef((props: Props, ref) => {
+
+export const SnackBar = forwardRef((props, ref) => {
     const [showSnackbar, setShowSnackbar] = useState(false);
+    const { message, type } = useContext(GlobalContext)
 
     useImperativeHandle(ref, () => ({
         show() {
@@ -19,9 +17,9 @@ export const SnackBar = forwardRef((props: Props, ref) => {
     }));
 
     return (
-        <Snack showSnack={showSnackbar} type={props.type}>
-            {props.type === "success" ? <h1>&#x2713;</h1> : <h1>&#x2613;</h1>}
-            <div>{props.message}</div>
+        <Snack showSnack={showSnackbar} type={type}>
+            {type === "success" ? <h1>&#x2713;</h1> : <h1>&#x2613;</h1>}
+            <div>{message}</div>
         </Snack>
     );
 });

@@ -39,7 +39,7 @@ grid-template-columns: repeat(3, 1fr);
 }
 
 @media(max-width: 600px){
-    justify-content: center;
+    justify-content: start;
 }
 `
 
@@ -54,7 +54,7 @@ margin-bottom: 16px;
 }
 @media(max-width: 600px){
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     text-align: center;
 }

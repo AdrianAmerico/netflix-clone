@@ -10,7 +10,6 @@ export const Snack = styled.div<Props>`
   left: 5%;
   bottom: 5%;
   z-index: 1000;
-  max-width: 350px;
   padding: 10px 5px;
   border-radius: 8px;
   display: inline-flex;
@@ -32,10 +31,17 @@ export const Snack = styled.div<Props>`
   animation: ${(props) => props.showSnack && "fadeIn 0.5s, fadeOut 0.5s 1.5s"};
 
   @media (max-width: 600px) {
+    display: flex;
+    width: auto;
+  }
+  @media (max-width: 450px) {
     left: 0;
     right: 0;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
+    bottom: 3%;
+  }
+
+  @media (min-width: 768px) {
+    min-width: 350px;
+    left: 2%;
   }
 `;

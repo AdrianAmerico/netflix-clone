@@ -2,14 +2,13 @@ import * as React from 'react'
 import { CategoryRow, FeaturedMovie, Header, Loading, Footer } from '../../components'
 import { IMovieInfo, IMovieList, requests } from '../../data'
 import { FeatureType } from '../../data/request'
-import { useFavorite } from '../../hooks/useFavorite'
 import { useBlackHeader } from '../../hooks/useBlackHeader'
+import { Main } from './homepage.component.style'
 
 export const HomePage = () => {
     const [movieList, setMovieList] = React.useState<IMovieList[] | []>([])
     const [featureData, setFeatureData] = React.useState<IMovieInfo | null>(null)
     const { isBlackHeader } = useBlackHeader()
-    const { addFavorite } = useFavorite()
 
     React.useEffect(() => {
         const getAllData = async (): Promise<void> => {
@@ -31,13 +30,13 @@ export const HomePage = () => {
                 <FeaturedMovie movie={featureData} />
                 : <Loading />
             }
-            <section style={{ marginTop: '-100px' }}>
+            <Main>
                 {movieList?.map((item: IMovieList, index: React.Key) => {
                     return (
                         <CategoryRow key={index} title={item.title} item={item} />
                     )
                 })}
-            </section>
+            </Main>
             <Footer />
         </React.Fragment>
     )

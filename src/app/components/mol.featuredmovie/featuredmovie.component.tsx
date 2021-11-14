@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { InfoIcon, PlayIcon } from '..';
 import { FeaturedBackground } from '../../../stories';
+import { GlobalContext } from '../../context';
 import { IMovieInfo } from '../../data';
 import { useFavorite } from '../../hooks/useFavorite';
 import { SnackBar } from '../mol.snackbar/snackbar.component';
@@ -11,14 +12,15 @@ interface Props {
 }
 
 export const FeaturedMovie = ({ movie }: Props) => {
-    const { addFavorite } = useFavorite()
     const snackbarRef = React.useRef<any | null>(null);
+    const { addFavorite, watchMovie } = useFavorite(snackbarRef)
+
     const firstDate = new Date(movie.first_air_date)
     const genres = []
-
     for (let i in movie.genres) {
         genres.push(movie.genres[i].name)
     }
+
     const { poster_path, original_name } = movie
     return (
         <FeaturedBackground image={movie.backdrop_path}>
@@ -36,8 +38,8 @@ export const FeaturedMovie = ({ movie }: Props) => {
                 {movie.overview}
             </Description>
             <div style={{ margin: "15px 0" }}>
-                <AWatchStyled><PlayIcon /> Assistir</AWatchStyled>
-                <AListStyled onClick={() => addFavorite({ poster_path, original_name }, snackbarRef)}>
+                <AWatchStyled onClick={watchMovie}><PlayIcon /> Assistir</AWatchStyled>
+                <AListStyled onClick={() => addFavorite({ poster_path, original_name })}>
                     <InfoIcon />
                     Minha Lista
                 </AListStyled>
@@ -47,8 +49,6 @@ export const FeaturedMovie = ({ movie }: Props) => {
             </DivGenderStyled>
             <SnackBar
                 ref={snackbarRef}
-                message="Item adicionado aos favoritos."
-                type={"success"}
             />
         </FeaturedBackground>
     )

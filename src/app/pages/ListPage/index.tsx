@@ -4,12 +4,14 @@ import { Footer, Header, StyledListItem } from '../../components';
 import { SnackBar } from '../../components/mol.snackbar/snackbar.component';
 import { ICardItem } from '../../data';
 import { useBlackHeader } from '../../hooks/useBlackHeader';
+import { useFavorite } from '../../hooks/useFavorite';
 import { ListPageContainer, DivStyled, MainStyled, ErrorMessage } from './listpage.component.style';
 
 export const ListPage = () => {
     const { isBlackHeader } = useBlackHeader()
     const [favoriteList, setFavoriteList] = React.useState<ICardItem[]>([])
-    const snackbarRef = React.useRef<any| null>(null);
+    const snackbarRef = React.useRef<any | null>(null);
+    const { removeFavorite } = useFavorite(snackbarRef)
 
     React.useEffect(() => {
         const getFavoriteItems = () => {
@@ -21,13 +23,6 @@ export const ListPage = () => {
         getFavoriteItems()
     }, [])
 
-    const removeFavorite = (data: ICardItem) => {
-        const updatedMovies = favoriteList.filter((item) => item.poster_path !== data.poster_path)!
-        localStorage.setItem('favoriteList', JSON.stringify(updatedMovies))
-        setFavoriteList(updatedMovies)
-        snackbarRef.current.show();
-    }
-
     return (
         <ListPageContainer>
             <Header isBlack={isBlackHeader} />
@@ -36,7 +31,7 @@ export const ListPage = () => {
                     {favoriteList && favoriteList.length ?
                         favoriteList?.map((data: ICardItem, index: number) => {
                             return (
-                                <StyledListItem key={index} onClick={() => removeFavorite(data)}>
+                                <StyledListItem key={index} onClick={() => removeFavorite(data, favoriteList, setFavoriteList)}>
                                     <img src={`${API.IMG_URL}${data.poster_path}`} alt={data.original_name} />
                                 </StyledListItem>
                             )
@@ -46,13 +41,10 @@ export const ListPage = () => {
                             </ErrorMessage>
                         )}
                 </DivStyled>
-
             </MainStyled>
             <Footer />
             <SnackBar
                 ref={snackbarRef}
-                message="Item removido dos favoritos."
-                type={"success"}
             />
         </ListPageContainer>
     )

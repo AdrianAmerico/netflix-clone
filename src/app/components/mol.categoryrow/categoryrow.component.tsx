@@ -14,7 +14,7 @@ interface Props {
 export const CategoryRow = ({ title, item }: Props) => {
     const [scrollX, setSctrollX] = React.useState<number>(0)
     const snackbarRef = React.useRef<any | null>(null);
-    const { addFavorite } = useFavorite()
+    const { addFavorite } = useFavorite(snackbarRef)
 
     const handleLeftArrow = () => {
         let x = scrollX + Math.round(window.innerWidth / 2);
@@ -54,7 +54,7 @@ export const CategoryRow = ({ title, item }: Props) => {
                                         addFavorite({
                                             poster_path,
                                             original_name: original_title ? original_title : data.original_name
-                                        }, snackbarRef)}
+                                        })}
                                 >
                                     <img src={`${API.IMG_URL}${poster_path}`} alt={data.original_title} />
                                 </StyledListItem>
@@ -65,8 +65,6 @@ export const CategoryRow = ({ title, item }: Props) => {
             </NavigationOverflow>
             <SnackBar
                 ref={snackbarRef}
-                message="Item adicionado aos favoritos."
-                type={"success"}
             />
         </CategoryContainer>
     )
