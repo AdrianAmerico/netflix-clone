@@ -1,8 +1,10 @@
 import * as React from 'react'
 import { InfoIcon, PlayIcon } from '..';
 import { FeaturedBackground } from '../../../stories';
+import { GlobalContext } from '../../context';
 import { IMovieInfo } from '../../data';
 import { useFavorite } from '../../hooks/useFavorite';
+import { SnackBar } from '../mol.snackbar/snackbar.component';
 import { AListStyled, AWatchStyled, Description, DivGenderStyled, DivStyled, MovieInfo, Title } from './featuredmovie.component.style';
 
 interface Props {
@@ -10,13 +12,15 @@ interface Props {
 }
 
 export const FeaturedMovie = ({ movie }: Props) => {
-    const { addFavorite } = useFavorite()
+    const snackbarRef = React.useRef<any | null>(null);
+    const { addFavorite, watchMovie } = useFavorite(snackbarRef)
+
     const firstDate = new Date(movie.first_air_date)
     const genres = []
-
     for (let i in movie.genres) {
         genres.push(movie.genres[i].name)
     }
+
     const { poster_path, original_name } = movie
     return (
         <FeaturedBackground image={movie.backdrop_path}>
@@ -33,13 +37,19 @@ export const FeaturedMovie = ({ movie }: Props) => {
             <Description>
                 {movie.overview}
             </Description>
-            <div style={{ margin: "15px 0" }} >
-                <AWatchStyled><PlayIcon /> Assistir</AWatchStyled>
-                <AListStyled onClick={() => addFavorite({ poster_path, original_name })}><InfoIcon /> Minha Lista</AListStyled>
+            <div style={{ margin: "15px 0" }}>
+                <AWatchStyled onClick={watchMovie}><PlayIcon /> Assistir</AWatchStyled>
+                <AListStyled onClick={() => addFavorite({ poster_path, original_name })}>
+                    <InfoIcon />
+                    Minha Lista
+                </AListStyled>
             </div>
             <DivGenderStyled>
                 <strong>Gêneros: {genres.join(', ')}</strong>
             </DivGenderStyled>
+            <SnackBar
+                ref={snackbarRef}
+            />
         </FeaturedBackground>
     )
 }

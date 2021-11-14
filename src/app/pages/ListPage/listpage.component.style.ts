@@ -5,6 +5,7 @@ export const ListPageContainer = styled.div`
   flex-direction: column;
   position: absolute;
   inset: 0;
+  transition: all 2s ease;
 `;
 
 export const MainStyled = styled.main`
@@ -18,8 +19,11 @@ export const DivStyled = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: all 0.2s ease;
   flex-wrap: wrap;
+
+  @media (max-width: 600px) {
+    padding-top: 10%;
+  }
 `;
 
 export const ErrorMessage = styled.div`

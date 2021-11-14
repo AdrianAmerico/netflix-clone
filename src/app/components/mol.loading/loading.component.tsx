@@ -1,8 +1,10 @@
 import * as React from 'react';
-import { ImgStyled } from '.';
+import { CircularProgress, DivStyled } from '.';
 
 export const Loading = () => {
     return (
-            <ImgStyled src="https://spoilertime.com/wp-content/uploads/2019/03/Netflix_LoadTime.gif" alt="loading" />
+        <DivStyled>
+            <CircularProgress />
+        </DivStyled>
     )
 }

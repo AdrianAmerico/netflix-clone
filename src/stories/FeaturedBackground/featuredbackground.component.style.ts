@@ -10,6 +10,7 @@ height: 100vh;
 background-size: cover;
 background-position: center;
 background-image: url(${API.BACKGROUND_IMAGE}/${(props) => props.image});
+background-repeat: no-repeat;
 
 @media(max-width: 768px){
     height: 90vh;
@@ -18,7 +19,7 @@ background-image: url(${API.BACKGROUND_IMAGE}/${(props) => props.image});
 export const VerticalTransparency = styled.div`
 height: inherit;
 width: inherit;
-background-image: linear-gradient(to top, ${colors.background_primary} 10%, transparent 90%)
+background-image: linear-gradient(to top, ${colors.background_primary} 10%, transparent 90%);
 `
 export const HorizontalTransparency = styled.div`
 display: flex;
@@ -29,5 +30,9 @@ width: inherit;
 padding: ${spacing.padding};
 padding-bottom: 100px;
 padding-top: 70px;
-background-image: linear-gradient(to right, ${colors.background_primary} 30%, transparent 70%)
+background-image: linear-gradient(to right, ${colors.background_primary} 30%, transparent 70%);
+
+@media(max-width: 400px) {
+    background-image: linear-gradient(to right, ${colors.background_primary} 20%, transparent 80%);
+}
 `
