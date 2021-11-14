@@ -1,0 +1,15 @@
+version: "3.3"
+
+services:
+   App:
+      container_name: App
+      image: node:14.17.3 #lts
+      command: yarn start
+      working_dir: /app
+      ports:
+         - 3000:3000
+      volumes:
+         - ./:/app
+
+networks:
+   base:

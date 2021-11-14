@@ -24,6 +24,7 @@ caso não tenha essa key, acesse o link da documentação abaixo, siga o passo a
 
 https://developers.themoviedb.org/3/getting-started/introduction
 
+Após tudo isso, utilize o **npm run start** ou se preferir e tiver docker, **docker-compose up**
 ### Desafios
 
 - [x]  deve usar [CRA] ou qualquer outro boilerplate
