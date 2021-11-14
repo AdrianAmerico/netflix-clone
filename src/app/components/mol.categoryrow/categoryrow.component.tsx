@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { API } from '../../../atomic'
 import { ICardItem, IMovieList } from '../../data'
-import { Card, StyledList, StyledListItem, CategoryContainer } from '.'
+import { Card, StyledList, StyledListItem, CategoryContainer, NavigationOverflow } from '.'
 import { NavigationIcon } from '../../../stories'
 import { AddIcon } from '..'
 
@@ -37,31 +37,32 @@ export const CategoryRow = ({ title, item, addFavorite }: Props) => {
             <NavigationIcon side='left' onClick={handleLeftArrow} />
 
             <NavigationIcon side="right" onClick={handleRightArrow} />
-
-            <Card size={item?.items?.length * 150}>
-                <StyledList margin={scrollX}>
-                    {item?.items?.map((data, index: number) => {
-                        const {
-                            poster_path,
-                            original_title
-                        } = data
-                        return (
-                            <StyledListItem key={index}
-                                onClick={() =>
-                                    addFavorite({
-                                        poster_path,
-                                        original_name: original_title ? original_title : data.original_name
-                                    })}
-                            >
-                                <img src={`${API.IMG_URL}${poster_path}`} alt={data.original_title} />
-                                {/* <div>
+            <NavigationOverflow style={{ overflow: "auto" }}>
+                <Card size={item?.items?.length * 150}>
+                    <StyledList margin={scrollX}>
+                        {item?.items?.map((data, index: number) => {
+                            const {
+                                poster_path,
+                                original_title
+                            } = data
+                            return (
+                                <StyledListItem key={index}
+                                    onClick={() =>
+                                        addFavorite({
+                                            poster_path,
+                                            original_name: original_title ? original_title : data.original_name
+                                        })}
+                                >
+                                    <img src={`${API.IMG_URL}${poster_path}`} alt={data.original_title} />
+                                    {/* <div>
                                     <AddIcon />
                                 </div> */}
-                            </StyledListItem>
-                        )
-                    })}
-                </StyledList>
-            </Card>
+                                </StyledListItem>
+                            )
+                        })}
+                    </StyledList>
+                </Card>
+            </NavigationOverflow>
         </CategoryContainer >
     )
 }

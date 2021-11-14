@@ -10,7 +10,7 @@ interface Props {
 export const CategoryContainer = styled.div`
 user-select: none;
 margin-bottom: 30px;
-overflow-x: auto;
+width: 100%;
 h2 {
     margin: 0 0 0 ${spacing.padding};
 }
@@ -18,9 +18,6 @@ h2 {
     >div {
         opacity: 1;
     }
-}
-::-webkit-scrollbar { 
-    display: none; 
 }
 `
 
@@ -34,6 +31,8 @@ display: flex;
 transition: ease all 0.2s;
 margin-left: ${(props) => props.margin}px;
 position: relative;
+width: 100%;
+overflow: auto;
 `
 
 export const StyledListItem = styled.div`
@@ -94,5 +93,13 @@ ${(props) => props.side}: 0;
 
 svg {
     height: 30%;
+}
+`
+
+export const NavigationOverflow = styled.div`
+width: 100%;
+overflow-x: auto;
+::-webkit-scrollbar { 
+    display: none; 
 }
 `
