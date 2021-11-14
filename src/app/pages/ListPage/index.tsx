@@ -1,15 +1,15 @@
 import React from 'react';
 import { API } from '../../../atomic';
 import { Footer, Header, StyledListItem } from '../../components';
+import { SnackBar } from '../../components/mol.snackbar/snackbar.component';
 import { ICardItem } from '../../data';
-import { useFavorite } from '../../hooks/useFavorite';
 import { useBlackHeader } from '../../hooks/useBlackHeader';
 import { ListPageContainer, DivStyled, MainStyled, ErrorMessage } from './listpage.component.style';
 
 export const ListPage = () => {
     const { isBlackHeader } = useBlackHeader()
-    // const { removeFavorite } = useFavorite()
     const [favoriteList, setFavoriteList] = React.useState<ICardItem[]>([])
+    const snackbarRef = React.useRef<any| null>(null);
 
     React.useEffect(() => {
         const getFavoriteItems = () => {
@@ -25,7 +25,8 @@ export const ListPage = () => {
         const updatedMovies = favoriteList.filter((item) => item.poster_path !== data.poster_path)!
         localStorage.setItem('favoriteList', JSON.stringify(updatedMovies))
         setFavoriteList(updatedMovies)
-        console.log('removido')
+        snackbarRef.current.show();
+
     }
 
     return (
@@ -46,8 +47,14 @@ export const ListPage = () => {
                             </ErrorMessage>
                         )}
                 </DivStyled>
+
             </MainStyled>
             <Footer />
+            <SnackBar
+                ref={snackbarRef}
+                message="Item removido dos favoritos."
+                type={"success"}
+            />
         </ListPageContainer>
     )
 }
