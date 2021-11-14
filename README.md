@@ -46,11 +46,16 @@ lorem ipsum bananinha dolor....
 
 - Exibe filmes que foram adicionados aos favoritos anteriormente, caso não haja filmes é mostrado ao usuário uma mensagem que a lista está vazia.
 
+**Snackbar**
+
+- Utilizado Context API.
+
 ## Problemas encontrados
 
 * A API em alguns titulos não retorna a URL da imagem, fazendo o filme destacado ficar sem foto, é raro de acontecer mas o problema existe.
 * Por algum motivo, mesmo colocando o id das categorias eles sempre retornam filmes da categoria ação, pra "burlar" esse problema cada categoria puxa dados diferentes, porém, todos são de ação.
 * Nome dos filmes vêm com o seu nome de origem, alguns ficam com nomes em idiomas japones ou coreano dificultando a leitura do usuário.
+* O Snackbar poderia ter sido melhor implementado, mas até então não sei como melhora-lo
 
 ## Considerações finais 
 
@@ -68,5 +73,24 @@ lorem ipsum bananinha dolor....
   - Iria existir um botão de pesquisa, onde ao digitar irá exibir séries e filmes correspondentes.
   - O botão Assistir iria exibir um modal ocupando toda a tela e uma opção de reproduzir o trailer do filme destacado.
 
-## Fotos
+## Imagens
 
+**Homepage**
+
+![homepage](/home/sanzukun/Vídeos/homepage.gif)
+
+**Snackbar**
+
+![snackbar](/home/sanzukun/Vídeos/snackbar.gif)
+
+**Scrollbar**
+
+![scrollbar](/home/sanzukun/Vídeos/scrollbar.gif)
+
+**Minha lista**
+
+![mylist](/home/sanzukun/Vídeos/mylist.gif)
+
+**Versão mobile**
+
+![mobile](/home/sanzukun/Vídeos/mobile.gif)
