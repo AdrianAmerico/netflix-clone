@@ -77,7 +77,7 @@ lorem ipsum bananinha dolor....
 
 **Homepage**
 
-![homepage](https://user-images.githubusercontent.com/73081422/141693713-668ba5ce-15c9-4605-904f-9fe4ba6ea7d6.gif)
+![homepage](https://user-images.githubusercontent.com/73081422/141693752-c28c1c9c-308e-4cfd-825f-505a1ac6cc68.gif)
 
 **Snackbar**
 
