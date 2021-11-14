@@ -3,16 +3,18 @@ import { API } from '../../../atomic'
 import { ICardItem, IMovieList } from '../../data'
 import { Card, StyledList, StyledListItem, CategoryContainer, NavigationOverflow } from '.'
 import { NavigationIcon } from '../../../stories'
-import { AddIcon } from '..'
+import { SnackBar } from '../mol.snackbar/snackbar.component'
+import { useFavorite } from '../../hooks/useFavorite'
 
 interface Props {
     title: string;
     item: IMovieList;
-    addFavorite: (data: ICardItem) => void
 }
 
-export const CategoryRow = ({ title, item, addFavorite }: Props) => {
+export const CategoryRow = ({ title, item }: Props) => {
     const [scrollX, setSctrollX] = React.useState<number>(0)
+    const snackbarRef = React.useRef<any | null>(null);
+    const { addFavorite } = useFavorite()
 
     const handleLeftArrow = () => {
         let x = scrollX + Math.round(window.innerWidth / 2);
@@ -46,23 +48,26 @@ export const CategoryRow = ({ title, item, addFavorite }: Props) => {
                                 original_title
                             } = data
                             return (
-                                <StyledListItem key={index}
+                                <StyledListItem
+                                    key={index}
                                     onClick={() =>
                                         addFavorite({
                                             poster_path,
                                             original_name: original_title ? original_title : data.original_name
-                                        })}
+                                        }, snackbarRef)}
                                 >
                                     <img src={`${API.IMG_URL}${poster_path}`} alt={data.original_title} />
-                                    {/* <div>
-                                    <AddIcon />
-                                </div> */}
                                 </StyledListItem>
                             )
                         })}
                     </StyledList>
                 </Card>
             </NavigationOverflow>
-        </CategoryContainer >
+            <SnackBar
+                ref={snackbarRef}
+                message="Item adicionado aos favoritos."
+                type={"success"}
+            />
+        </CategoryContainer>
     )
 }

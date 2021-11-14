@@ -1,8 +1,6 @@
 /* eslint-disable react/display-name */
 import React, { useState, forwardRef, useImperativeHandle } from "react";
 import { Snack } from "./snackbar.component.style";
-import './snackbar.css'
-
 interface Props {
     ref: React.MutableRefObject<any>;
     message: string

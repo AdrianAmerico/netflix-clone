@@ -3,6 +3,7 @@ import { InfoIcon, PlayIcon } from '..';
 import { FeaturedBackground } from '../../../stories';
 import { IMovieInfo } from '../../data';
 import { useFavorite } from '../../hooks/useFavorite';
+import { SnackBar } from '../mol.snackbar/snackbar.component';
 import { AListStyled, AWatchStyled, Description, DivGenderStyled, DivStyled, MovieInfo, Title } from './featuredmovie.component.style';
 
 interface Props {
@@ -11,6 +12,7 @@ interface Props {
 
 export const FeaturedMovie = ({ movie }: Props) => {
     const { addFavorite } = useFavorite()
+    const snackbarRef = React.useRef<any | null>(null);
     const firstDate = new Date(movie.first_air_date)
     const genres = []
 
@@ -33,13 +35,21 @@ export const FeaturedMovie = ({ movie }: Props) => {
             <Description>
                 {movie.overview}
             </Description>
-            <div style={{ margin: "15px 0" }} >
+            <div style={{ margin: "15px 0" }}>
                 <AWatchStyled><PlayIcon /> Assistir</AWatchStyled>
-                <AListStyled onClick={() => addFavorite({ poster_path, original_name })}><InfoIcon /> Minha Lista</AListStyled>
+                <AListStyled onClick={() => addFavorite({ poster_path, original_name }, snackbarRef)}>
+                    <InfoIcon />
+                    Minha Lista
+                </AListStyled>
             </div>
             <DivGenderStyled>
                 <strong>Gêneros: {genres.join(', ')}</strong>
             </DivGenderStyled>
+            <SnackBar
+                ref={snackbarRef}
+                message="Item adicionado aos favoritos."
+                type={"success"}
+            />
         </FeaturedBackground>
     )
 }

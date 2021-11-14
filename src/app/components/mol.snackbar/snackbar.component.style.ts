@@ -9,6 +9,7 @@ export const Snack = styled.div<Props>`
   position: fixed;
   left: 5%;
   bottom: 5%;
+  z-index: 1000;
   max-width: 350px;
   padding: 10px 5px;
   border-radius: 8px;

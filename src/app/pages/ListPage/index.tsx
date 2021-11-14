@@ -26,7 +26,6 @@ export const ListPage = () => {
         localStorage.setItem('favoriteList', JSON.stringify(updatedMovies))
         setFavoriteList(updatedMovies)
         snackbarRef.current.show();
-
     }
 
     return (

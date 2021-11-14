@@ -34,7 +34,7 @@ export const HomePage = () => {
             <section style={{ marginTop: '-100px' }}>
                 {movieList?.map((item: IMovieList, index: React.Key) => {
                     return (
-                        <CategoryRow key={index} title={item.title} item={item} addFavorite={addFavorite} />
+                        <CategoryRow key={index} title={item.title} item={item} />
                     )
                 })}
             </section>
