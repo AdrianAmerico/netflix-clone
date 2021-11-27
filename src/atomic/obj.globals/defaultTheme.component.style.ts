@@ -1,3 +1,3 @@
-import { colors } from "../obj.constants";
+import { colors } from '../obj.constants'
 
-export const defaultTheme = { colors };
+export const defaultTheme = { colors }

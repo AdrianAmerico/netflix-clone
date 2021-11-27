@@ -1,9 +1,9 @@
-import * as React from 'react';
-import { FacebookIcon, InstagramIcon, TwitterIcon, YoutubeIcon } from '..';
-import { DivStyled, FooterStyled, LiStyled, SpanStyled, UlStyled, AStyled } from './footer.component.style';
+import * as React from 'react'
+import { FacebookIcon, InstagramIcon, TwitterIcon, YoutubeIcon } from '..'
+import { DivStyled, FooterStyled, LiStyled, SpanStyled, UlStyled, AStyled } from './footer.component.style'
 
 export const Footer = () => {
-    return (
+  return (
         <FooterStyled>
             <DivStyled>
                 <a href="/" target="_blank" rel="">
@@ -91,5 +91,5 @@ export const Footer = () => {
                 </LiStyled>
             </UlStyled>
         </FooterStyled>
-    )
+  )
 }

@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { spacing } from "../../../atomic";
+import styled from 'styled-components'
+import { spacing } from '../../../atomic'
 
 interface Props {
     side?: string,

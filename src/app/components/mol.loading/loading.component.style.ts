@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const DivStyled = styled.div`
 position: fixed;
@@ -36,4 +36,4 @@ export const CircularProgress = styled.div`
       transform: rotate(360deg);
     }
   }
-`;
+`

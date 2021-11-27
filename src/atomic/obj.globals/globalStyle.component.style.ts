@@ -1,6 +1,8 @@
-import 'styled-components';
+/* eslint-disable import/no-duplicates */
+/* eslint-disable camelcase */
+import 'styled-components'
 import { createGlobalStyle } from 'styled-components'
-import { fontFamily, fontSize, lineHeight } from '../obj.constants';
+import { fontFamily, fontSize, lineHeight } from '../obj.constants'
 
 declare module 'styled-components' {
     export interface DefaultTheme {

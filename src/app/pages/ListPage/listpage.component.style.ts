@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const ListPageContainer = styled.div`
   display: flex;
@@ -6,14 +6,14 @@ export const ListPageContainer = styled.div`
   position: absolute;
   inset: 0;
   transition: all 2s ease;
-`;
+`
 
 export const MainStyled = styled.main`
   flex: 1;
   display: flex;
   flex-wrap: wrap;
   padding: 10% 4%;
-`;
+`
 
 export const DivStyled = styled.div`
   display: flex;
@@ -24,7 +24,7 @@ export const DivStyled = styled.div`
   @media (max-width: 600px) {
     padding-top: 10%;
   }
-`;
+`
 
 export const ErrorMessage = styled.div`
   color: #999;
@@ -34,4 +34,4 @@ export const ErrorMessage = styled.div`
   position: absolute;
   inset: auto 0 auto 0;
   text-align: center;
-`;
+`

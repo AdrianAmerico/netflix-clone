@@ -1,5 +1,5 @@
-import React from 'react';
-import { ButtonStyled } from './button.component.style';
+import React from 'react'
+import { ButtonStyled } from './button.component.style'
 
 interface ButtonProps {
     /**
@@ -28,13 +28,13 @@ interface ButtonProps {
  * Primary UI component for user interaction
  */
 export const Button = ({
-    primary = false,
-    size = 'medium',
-    backgroundColor,
-    label,
-    ...props
+  primary = false,
+  size = 'medium',
+  backgroundColor,
+  label,
+  ...props
 }: ButtonProps) => {
-    return (
+  return (
         <ButtonStyled
             type="button"
             size={size}
@@ -44,5 +44,5 @@ export const Button = ({
         >
             {label}
         </ButtonStyled>
-    );
-};
+  )
+}
