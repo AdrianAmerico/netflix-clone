@@ -6,7 +6,7 @@ interface Props {
 */
     isBlack: boolean
     /**
-* You can change the header pading with string values 
+* You can change the header pading with string values
 */
     spacing?: string
     /**
@@ -16,16 +16,16 @@ interface Props {
 }
 
 const setSize = (size: string | void) => {
-    switch (size) {
-        case 'small':
-            return '45'
-        case 'medium':
-            return '70'
-        case 'large':
-            return '100'
-        default:
-            return '70'
-    }
+  switch (size) {
+    case 'small':
+      return '45'
+    case 'medium':
+      return '70'
+    case 'large':
+      return '100'
+    default:
+      return '70'
+  }
 }
 
 export const HeaderStyled = styled.header<Props>`
@@ -38,5 +38,5 @@ z-index: 999;
 inset: 0 0 auto 0;
 height: ${props => setSize(props.size)}px;
 transition: ease all 0.5s;
-background: ${(props) => props.isBlack ? "#111" : 'transparent'};
+background: ${(props) => props.isBlack ? '#111' : 'transparent'};
 `

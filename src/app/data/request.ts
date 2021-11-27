@@ -1,6 +1,6 @@
-import axios from 'axios';
-import { API } from '../../atomic';
-import { IMovie, IMovieInfo, IMovieList } from './request.component.type';
+import axios from 'axios'
+import { API } from '../../atomic'
+import { IMovie, IMovieInfo, IMovieList } from './request.component.type'
 
 const endRequest = `${API.PTBR}${API.API_KEY}`
 

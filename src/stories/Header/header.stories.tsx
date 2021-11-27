@@ -1,44 +1,44 @@
-import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { HeaderCustom as Header } from '.';
+import React from 'react'
+import { ComponentStory, ComponentMeta } from '@storybook/react'
+import { HeaderCustom as Header } from '.'
 
 export default {
-    title: 'Example/Header',
-    component: Header,
-} as ComponentMeta<typeof Header>;
+  title: 'Example/Header',
+  component: Header
+} as ComponentMeta<typeof Header>
 
-const Template: ComponentStory<typeof Header> = args => <Header {...args} />;
+const Template: ComponentStory<typeof Header> = args => <Header {...args} />
 
-export const black = Template.bind({});
+export const black = Template.bind({})
 black.args = {
-    isBlack: true,
-};
+  isBlack: true
+}
 
-export const transparent = Template.bind({});
+export const transparent = Template.bind({})
 transparent.args = {
-    isBlack: false,
-};
+  isBlack: false
+}
 
-export const Large = Template.bind({});
+export const Large = Template.bind({})
 Large.args = {
-    size: 'large',
-    isBlack: true
-};
+  size: 'large',
+  isBlack: true
+}
 
-export const Small = Template.bind({});
+export const Small = Template.bind({})
 Small.args = {
-    size: 'small',
-    isBlack: true
-};
+  size: 'small',
+  isBlack: true
+}
 
-export const Medium = Template.bind({});
+export const Medium = Template.bind({})
 Medium.args = {
-    size: 'medium',
-    isBlack: true
-};
+  size: 'medium',
+  isBlack: true
+}
 
-export const Spacing = Template.bind({});
+export const Spacing = Template.bind({})
 Spacing.args = {
-    spacing: '50',
-    isBlack: true
-};
+  spacing: '50',
+  isBlack: true
+}

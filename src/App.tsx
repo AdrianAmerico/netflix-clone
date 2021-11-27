@@ -1,10 +1,10 @@
-import * as React from 'react';
-import { ThemeProvider } from 'styled-components';
-import { GlobalContextProvider } from './app/context';
-import Router from './app/pages/Router';
-import { defaultTheme, GlobalStyle } from './atomic';
+import * as React from 'react'
+import { ThemeProvider } from 'styled-components'
+import { GlobalContextProvider } from './app/context'
+import Router from './app/pages/Router'
+import { defaultTheme, GlobalStyle } from './atomic'
 
-function App() {
+function App () {
   return (
     <ThemeProvider theme={defaultTheme}>
       <GlobalContextProvider>
@@ -12,7 +12,7 @@ function App() {
         <GlobalStyle />
       </GlobalContextProvider>
     </ThemeProvider>
-  );
+  )
 }
 
-export default App;
+export default App

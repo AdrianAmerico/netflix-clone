@@ -1,5 +1,5 @@
-import React from 'react';
-import { SectionStyled, VerticalTransparency, HorizontalTransparency } from './featuredbackground.component.style';
+import React from 'react'
+import { SectionStyled, VerticalTransparency, HorizontalTransparency } from './featuredbackground.component.style'
 
 interface Props {
     /**
@@ -9,8 +9,7 @@ interface Props {
 }
 
 export const FeaturedBackground: React.FC<Props> = ({ children, image }) => {
-
-    return (
+  return (
         <SectionStyled image={image}>
             <VerticalTransparency>
                 <HorizontalTransparency>
@@ -18,5 +17,5 @@ export const FeaturedBackground: React.FC<Props> = ({ children, image }) => {
                 </HorizontalTransparency>
             </VerticalTransparency>
         </SectionStyled>
-    )
+  )
 }

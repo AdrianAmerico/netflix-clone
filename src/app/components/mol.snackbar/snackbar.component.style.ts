@@ -1,8 +1,8 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 interface Props {
   showSnack?: boolean;
-  type?: "success" | "fail";
+  type?: 'success' | 'fail';
 }
 
 export const Snack = styled.div<Props>`
@@ -16,7 +16,7 @@ export const Snack = styled.div<Props>`
   align-items: center;
   text-align: center;
   background-color: ${(props) =>
-    props.type === "success" ? "#00F593" : "#FF0033"};
+    props.type === 'success' ? '#00F593' : '#FF0033'};
   > h1 {
     flex: 20%;
     word-break: keep-all;
@@ -27,8 +27,8 @@ export const Snack = styled.div<Props>`
     font-weight: bold;
   }
 
-  visibility: ${(props) => (props.showSnack ? "visible" : "hidden")};
-  animation: ${(props) => props.showSnack && "fadeIn 0.5s, fadeOut 0.5s 1.5s"};
+  visibility: ${(props) => (props.showSnack ? 'visible' : 'hidden')};
+  animation: ${(props) => props.showSnack && 'fadeIn 0.5s, fadeOut 0.5s 1.5s'};
 
   @media (max-width: 600px) {
     display: flex;
@@ -44,4 +44,4 @@ export const Snack = styled.div<Props>`
     min-width: 350px;
     left: 2%;
   }
-`;
+`

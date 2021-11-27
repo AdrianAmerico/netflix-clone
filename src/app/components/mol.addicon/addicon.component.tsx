@@ -1,7 +1,7 @@
-import * as React from 'react';
+import * as React from 'react'
 
 export const AddIcon: React.FC<React.SVGProps<SVGSVGElement>> = () => {
-    return (
+  return (
         <svg
             width="1.5rem"
             height="1.5rem"
@@ -11,5 +11,5 @@ export const AddIcon: React.FC<React.SVGProps<SVGSVGElement>> = () => {
                 d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
                 fill="#fff" />
         </svg>
-    )
+  )
 }

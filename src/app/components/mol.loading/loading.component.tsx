@@ -1,10 +1,10 @@
-import * as React from 'react';
-import { CircularProgress, DivStyled } from '.';
+import * as React from 'react'
+import { CircularProgress, DivStyled } from '.'
 
 export const Loading = () => {
-    return (
+  return (
         <DivStyled>
             <CircularProgress />
         </DivStyled>
-    )
+  )
 }

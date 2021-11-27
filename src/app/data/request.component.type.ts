@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 export interface IMovie {
     original_name: string;
     id: string
